@@ -20,7 +20,7 @@ export class AdminSidebarComponent implements OnInit {
       if (
         !item.authorize ||
         item.authorize.indexOf(
-          this._authService.currentUserValue.result.UserStatusName
+          this._authService.currentUserValue.result.UserTypeName
         ) != -1
       )
         this.menu.push(item);
