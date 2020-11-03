@@ -5,20 +5,20 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
   AdminHeaderComponent,
   AdminFooterComponent,
   AdminLayoutComponent,
-} from '../../components/layouts/admin/';
-import { DashboardComponent } from './';
-import { LoginComponent } from './login/login.component';
-import { UserAddComponent } from './user-add/user-add.component';
-
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
+  PasswordControlWindowComponent,
+  DialogWindowComponent
+} from '../../components/';
+import { DashboardComponent, LoginComponent, UserAddComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,7 +33,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminControlSidebarComponent,
     AdminSidebarComponent,
     LoginComponent,
-    UserAddComponent
+    UserAddComponent,
+    PasswordControlWindowComponent,
+    DialogWindowComponent
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
+    MatDialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -52,4 +55,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [],
 })
-export class AdminLayoutModule { }
+export class AdminLayoutModule {}

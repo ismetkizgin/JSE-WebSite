@@ -12,7 +12,7 @@
                                 <mat-label>{{ 'First Name' | translate }}</mat-label>
                                 <input matInput type="text" placeholder="{{ 'Enter First Name' | translate }}"
                                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="UserFirstName" #UserFirstName="ngModel"
-                                    [(ngModel)]="userModel.UserFirstName" required>
+                                    [(ngModel)]="_model.UserFirstName" required>
                                 <mat-error *ngIf="UserFirstName.invalid&&UserFirstName.touched">
                                     {{ 'User First Name field must be filled' | translate }}</mat-error>
                             </mat-form-field>
@@ -24,34 +24,32 @@
                                 <mat-label>{{ 'Last Name' | translate }}</mat-label>
                                 <input matInput type="text" placeholder="{{ 'Enter Last Name' | translate }}"
                                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="UserLastName" #UserLastName="ngModel"
-                                    [(ngModel)]="userModel.UserLastName" required>
+                                    [(ngModel)]="_model.UserLastName" required>
                                 <mat-error *ngIf="UserLastName.invalid&&UserLastName.touched">
                                     {{ 'User Last Name field must be filled' | translate }}</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div
+                        class="col-lg-{{_router.isActive('/admin/user/profile',true) ? '6' : '12'}} col-md-12 col-xs-12">
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Email Address' | translate }}</mat-label>
                                 <input matInput type="text" placeholder="{{ 'Enter Email Address' | translate }}"
                                     pattern="^[a-z0-9.%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" name="UserEmail"
-                                    #UserEmail="ngModel" [(ngModel)]="userModel.UserEmail" required>
+                                    #UserEmail="ngModel" [(ngModel)]="_model.UserEmail" required>
                                 <mat-error *ngIf="UserEmail.invalid&&UserEmail.touched">
                                     {{ 'Email adress field must be filled' | translate }}</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-xs-12">
+                    <div class="col-lg-6 col-md-12 col-xs-12" [hidden]="_router.isActive('/admin/user/profile',true)">
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{'User Type'| translate}}</mat-label>
                                 <select matNativeControl name="UserTypeName" #UserTypeName="ngModel"
-                                    ng-model="UserTypeNameNameSelect" [(ngModel)]="userModel.UserTypeName" required>
+                                    [disabled]="_router.isActive('/admin/user/profile',true)"
+                                    ng-model="UserTypeNameNameSelect" [(ngModel)]="_model.UserTypeName" required>
                                     <option *ngFor="let userRole of userRoles" [value]="userRole.userTypeName"
                                         [disabled]="!userRole.authorize">
                                         {{ userRole.userTypeName | translate }}</option>
@@ -68,9 +66,8 @@
                                 <mat-label>{{ 'Password' | translate }}</mat-label>
                                 <input matInput [type]=" _passwordShowHide ? 'text' : 'password'"
                                     placeholder="{{ 'Enter Password' | translate }}" name="UserPassword" minlength="6"
-                                    #UserPassword="ngModel" [(ngModel)]="userModel.UserPassword"
-                                    [required]="!_router.isActive('admin/user/edit',false)"
-                                    [disabled]="_router.isActive('/admin/user/edit',false)">
+                                    #UserPassword="ngModel" [disabled]="_router.isActive('/admin/user/edit',false)"
+                                    [(ngModel)]="_model.UserPassword" required>
                                 <a type="button" matSuffix (click)="_passwordShowHide = !_passwordShowHide"
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="_passwordShowHide">
                                     <mat-icon>{{ _passwordShowHide ? 'visibility_off' : 'visibility'}}
@@ -85,11 +82,10 @@
                             </mat-form-field>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-12 col-md-12 col-xs-12">
                         <div class="form-group text-right">
                             <button type="button" (click)="onAutomaticPasswordGeneration()"
+                                [hidden]="_router.isActive('/admin/user/edit',false) || _router.isActive('/admin/user/profile',true)"
                                 class="btn btn-success">{{ 'Automatic password generation' | translate }}</button>
                         </div>
                     </div>
@@ -101,3 +97,8 @@
         </div>
     </div>
 </form>
+<div class="row"  [hidden]="!_router.isActive('/admin/user/profile',true)">
+    <div class="col-12 account_detele">
+        <a (click)="myAccountDelete()">{{ 'Delete my account' | translate }}</a>
+    </div>
+</div>

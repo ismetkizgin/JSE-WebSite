@@ -4,7 +4,12 @@ import {
   ClientLayoutComponent,
   AdminLayoutComponent,
 } from './components/layouts';
-import { HomepageComponent, DashboardComponent, LoginComponent, UserAddComponent } from './pages';
+import {
+  HomepageComponent,
+  DashboardComponent,
+  LoginComponent,
+  UserAddComponent,
+} from './pages';
 import { AuthGuard } from './utils/guards';
 
 const routes: Routes = [
@@ -23,16 +28,34 @@ const routes: Routes = [
         path: '',
         component: DashboardComponent,
         data: {
-          title: 'Dashboard', icon: 'fa fa-2x fa-home'
-        }
+          title: 'Dashboard',
+          icon: 'fa fa-2x fa-home',
+        },
       },
       {
         path: 'user/add',
         component: UserAddComponent,
         data: {
-          title: 'User Add', icon: 'fa fa-2x fa-user'
-        }
-      }
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'user/edit/:UserID',
+        component: UserAddComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'user/profile',
+        component: UserAddComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
     ],
   },
   {
@@ -46,5 +69,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingComponents = [];
