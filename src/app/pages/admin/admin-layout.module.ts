@@ -14,6 +14,11 @@ import {
 } from '../../components/layouts/admin/';
 import { DashboardComponent } from './';
 import { LoginComponent } from './login/login.component';
+import { UserAddComponent } from './user-add/user-add.component';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -27,12 +32,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminHeaderComponent,
     AdminControlSidebarComponent,
     AdminSidebarComponent,
-    LoginComponent
+    LoginComponent,
+    UserAddComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -43,4 +52,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [],
 })
-export class AdminLayoutModule {}
+export class AdminLayoutModule { }
