@@ -1,0 +1,26 @@
+.banner {
+  background: linear-gradient(to top, #7971df, #fff);
+  //background: #353535;
+  height: 40px;
+
+  &__text {
+    font-family: "Playfair Display", Serif;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+nav {
+  background: linear-gradient(to bottom, #211d51, #1c1a1a);
+
+  i {
+    color: white;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .title{
+    display: none;
+  }
+
+  @media screen and (max-width: 750px) {
+    .title {
+      display: inline;
+      color: white;
+      font-size: 1rem;
+      margin-left: 10px;
+      font-family: 'Playfair Display', Serif;
+    }
+  }
+}
