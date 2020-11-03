@@ -19,15 +19,11 @@ $my-app-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$my-app-theme: mat-light-theme(
-  (
-    color: (
-      primary: $my-app-primary,
+$my-app-theme: mat-light-theme((color: (primary: $my-app-primary,
       accent: $my-app-accent,
       warn: $my-app-warn,
     ),
-  )
-);
+  ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -37,8 +33,41 @@ $my-app-theme: mat-light-theme(
 /* You can add global styles to this file, and also import other style files */
 
 .notification {
+  color: white;
+
   &__error {
     background-color: brown;
+  }
+
+  &__error button {
     color: white;
+    background-color: brown;
+  }
+
+  &__success {
+    background-color: green;
+  }
+
+  &__success button {
+    color: white;
+    background-color: green;
+  }
+}
+
+.card-header {
+  height: 50px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.list-menu {
+  background-color: rgb(140, 140, 140, 0.2);
+  border-radius: 4em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: white;
   }
 }
