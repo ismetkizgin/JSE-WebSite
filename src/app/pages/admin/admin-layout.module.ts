@@ -14,6 +14,7 @@ import {
   AdminControlSidebarComponent,
   AdminHeaderComponent,
   AdminFooterComponent,
+  BlogMenuComponent,
   AdminLayoutComponent,
   PasswordControlWindowComponent,
   DialogWindowComponent
@@ -35,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     UserAddComponent,
     PasswordControlWindowComponent,
+    BlogMenuComponent,
     DialogWindowComponent
   ],
   imports: [
