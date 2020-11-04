@@ -7,7 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {
   ClientLayoutComponent,
   ClientNavbarComponent,
-  ClientBannerComponent
+  ClientBannerComponent,
+  ClientSliderComponent
 } from '../../components/layouts/client';
 import { HomepageComponent } from './';
 
@@ -20,7 +21,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientLayoutComponent,
     HomepageComponent,
     ClientNavbarComponent,
-    ClientBannerComponent
+    ClientBannerComponent,
+    ClientSliderComponent
   ],
   imports: [
     CommonModule,
