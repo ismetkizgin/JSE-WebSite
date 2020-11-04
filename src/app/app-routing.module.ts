@@ -9,6 +9,7 @@ import {
   DashboardComponent,
   LoginComponent,
   UserAddComponent,
+  UserListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -43,6 +44,14 @@ const routes: Routes = [
       {
         path: 'user/edit/:UserID',
         component: UserAddComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'users',
+        component: UserListComponent,
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',

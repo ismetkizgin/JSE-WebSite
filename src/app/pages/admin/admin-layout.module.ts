@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgSearchFilterModule } from 'ng-search-filter';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -18,7 +20,7 @@ import {
   PasswordControlWindowComponent,
   DialogWindowComponent
 } from '../../components/';
-import { DashboardComponent, LoginComponent, UserAddComponent } from './';
+import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -35,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     UserAddComponent,
     PasswordControlWindowComponent,
-    DialogWindowComponent
+    DialogWindowComponent,
+    UserListComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatIconModule,
     MatDialogModule,
+    MatMenuModule,
+    NgSearchFilterModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
