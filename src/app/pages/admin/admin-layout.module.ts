@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgSearchFilterModule } from 'ng-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -18,7 +19,8 @@ import {
   AdminFooterComponent,
   AdminLayoutComponent,
   PasswordControlWindowComponent,
-  DialogWindowComponent
+  DialogWindowComponent,
+  PaginationComponent
 } from '../../components/';
 import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent } from './';
 
@@ -38,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserAddComponent,
     PasswordControlWindowComponent,
     DialogWindowComponent,
-    UserListComponent
+    UserListComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
+    NgxPaginationModule,
     NgSearchFilterModule,
     TranslateModule.forRoot({
       loader: {
