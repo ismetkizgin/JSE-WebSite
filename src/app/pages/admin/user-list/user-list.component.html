@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users | filter:searchText">
+                <tr *ngFor="let user of users | filter:searchText | paginate: paginationConfig">
                     <td>{{ user.UserID }}</td>
                     <td>{{ user.UserFirstName }} {{ user.UserLastName }}</td>
                     <th>{{ user.UserTypeName }}</th>
@@ -50,3 +50,4 @@
         </table>
     </div>
 </div>
+<app-pagination [config]="paginationConfig"></app-pagination>
