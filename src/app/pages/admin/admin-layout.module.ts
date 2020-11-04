@@ -9,6 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgSearchFilterModule } from 'ng-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -16,9 +19,10 @@ import {
   AdminFooterComponent,
   AdminLayoutComponent,
   PasswordControlWindowComponent,
-  DialogWindowComponent
+  DialogWindowComponent,
+  PaginationComponent
 } from '../../components/';
-import { DashboardComponent, LoginComponent, UserAddComponent } from './';
+import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -35,7 +39,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     UserAddComponent,
     PasswordControlWindowComponent,
-    DialogWindowComponent
+    DialogWindowComponent,
+    UserListComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +51,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatIconModule,
     MatDialogModule,
+    MatMenuModule,
+    NgxPaginationModule,
+    NgSearchFilterModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
