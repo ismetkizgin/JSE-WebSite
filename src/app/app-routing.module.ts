@@ -12,7 +12,8 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  TeamMemberListComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -99,7 +100,15 @@ const routes: Routes = [
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',
         }
-      }
+      },
+      {
+        path: 'team-member-list',
+        component: TeamMemberListComponent,
+        data: {
+          title: 'Team Member List',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
     ],
   },
   {
