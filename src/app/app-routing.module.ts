@@ -56,6 +56,14 @@ const routes: Routes = [
           icon: 'fa fa-2x fa-user',
         },
       },
+      {
+        path: 'blog-menus',
+        component: UserAddComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
     ],
   },
   {
