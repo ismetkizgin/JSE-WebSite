@@ -10,6 +10,7 @@ import {
   ClientBannerComponent
 } from '../../components/layouts/client';
 import { HomepageComponent } from './';
+import { TeamMembersComponent } from './team-members/team-members.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -20,7 +21,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientLayoutComponent,
     HomepageComponent,
     ClientNavbarComponent,
-    ClientBannerComponent
+    ClientBannerComponent,
+    TeamMembersComponent
   ],
   imports: [
     CommonModule,
@@ -36,4 +38,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [],
 })
-export class ClientLayoutModule {}
+export class ClientLayoutModule { }

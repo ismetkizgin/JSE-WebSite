@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row team-members__padding">
+        <div class="col-6" *ngFor="let teamMember of teamMembers">
+            <div class="card card-widget widget-user">
+                <div class="widget-user-header bg-primary">
+                    <h3 class="widget-user-username"> {{ teamMember.TeamMemberName }} </h3>
+                    <h5 class="widget-user-desc"> {{ teamMember.TeamMemberTitle }} </h5>
+                </div>
+                <div class="widget-user-image">
+                    <img class="img-circle elevation-2" src="assets/images/default/user.png" alt="User Avatar">
+                </div>
+                <div class="card-body">
+                    <div class="row team-members__padding">
+                        <div class="col-12">
+                            <p class="text-center"> {{ teamMember.TeamMemberCompany }} </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="text-center"> {{ teamMember.TeamMemberDescription }} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-6 border-right">
+                            <div class="description-block">
+                                <div>
+                                    <a href="{{ teamMember.TeamMemberLinkedin }}"><i
+                                            class="fab fa-linkedin fa-3x"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="description-block">
+                                <div>
+                                    <a href="{{ teamMember.TeamMemberGithub }}"><i
+                                            class="fab fa-github fa-3x text-dark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
