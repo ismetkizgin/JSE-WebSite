@@ -33,8 +33,10 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  ProjectListComponent,
 } from './';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -59,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaginationComponent,
     ProjectAddComponent,
     SlideListComponent,
+    ProjectListComponent,
   ],
   imports: [
     CommonModule,
