@@ -22,9 +22,16 @@ import {
   PasswordControlWindowComponent,
   ChangePasswordComponent,
   DialogWindowComponent,
-  PaginationComponent
+  PaginationComponent,
 } from '../../components/';
-import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent, BlogMenuListComponent } from './';
+import {
+  DashboardComponent,
+  LoginComponent,
+  UserAddComponent,
+  UserListComponent,
+  SlideListComponent,
+  BlogMenuListComponent,
+} from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -46,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DialogWindowComponent,
     BlogMenuListComponent,
     UserListComponent,
-    PaginationComponent
+    PaginationComponent,
+    SlideListComponent,
   ],
   imports: [
     CommonModule,
