@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {ApiFetchService} from '../api-fetch/api-fetch.service';
-import {TranslateService} from '@ngx-translate/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { ApiFetchService } from '../api-fetch/api-fetch.service';
+import { TranslateService } from '@ngx-translate/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class ProjectService {
     private _snackBar: MatSnackBar,
     private _translateService: TranslateService
   ) { }
+
+  async listAsync() {
+    return await this._apiFetchService.requestAsync('GET', 'project', null);
+  }
 
   async findAsync(projectID) {
     return await this._apiFetchService.requestAsync(

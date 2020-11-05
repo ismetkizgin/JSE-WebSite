@@ -12,7 +12,8 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  ProjectsComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -20,7 +21,16 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      {
+        path: '',
+        component: HomepageComponent
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent
+      }
+    ],
   },
   {
     path: 'admin',
@@ -113,5 +123,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingComponents = [];
