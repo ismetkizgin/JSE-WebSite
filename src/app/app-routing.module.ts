@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ChildActivationEnd } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import {
   ClientLayoutComponent,
   AdminLayoutComponent,
@@ -10,6 +10,7 @@ import {
   LoginComponent,
   UserAddComponent,
   UserListComponent,
+  SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent
 } from './pages';
@@ -70,6 +71,14 @@ const routes: Routes = [
       {
         path: 'blog-menus',
         component: BlogMenuListComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'slides',
+        component: SlideListComponent,
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
