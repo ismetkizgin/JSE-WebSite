@@ -9,6 +9,8 @@ import {
   DashboardComponent,
   LoginComponent,
   UserAddComponent,
+  UserListComponent,
+  BlogMenuListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -49,6 +51,14 @@ const routes: Routes = [
         },
       },
       {
+        path: 'users',
+        component: UserListComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
         path: 'user/profile',
         component: UserAddComponent,
         data: {
@@ -58,7 +68,7 @@ const routes: Routes = [
       },
       {
         path: 'blog-menus',
-        component: UserAddComponent,
+        component: BlogMenuListComponent,
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
