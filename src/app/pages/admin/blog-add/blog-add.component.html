@@ -1,0 +1,86 @@
+<form #blogForm='ngForm'  (ngSubmit)="onSave(blogForm)">
+    <div class="row">
+        <div class="col-12 card card-outline card-info">
+            <div class="card-header">
+                <h3 class="card-title">{{ 'Blog Informations' | translate }}</h3>
+            </div>
+            <div class="card-body pad">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{ 'Blog Title' | translate }}</mat-label>
+                                <input matInput type="text" placeholder="{{ 'Enter Blog Title' | translate }}"
+                                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="BlogTitle" #BlogTitle="ngModel"
+                                    [(ngModel)]="_model.BlogTitle" required>
+                                <mat-error *ngIf="BlogTitle.invalid&&BlogTitle.touched">
+                                    {{ 'Blog Title field must be filled' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{ 'Blog Description' | translate }}</mat-label>
+                                <textarea matInput type="text" placeholder="{{ 'Enter Blog Description' | translate }}"
+                                    name="BlogDescription" #BlogDescription="ngModel"
+                                    [(ngModel)]="_model.BlogDescription" required></textarea>
+                                <mat-error *ngIf="BlogDescription.invalid&&BlogDescription.touched">
+                                    {{ 'Blog Description field must be filled' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-12" >
+                        <div class="form-group">
+                            <input style="display: none" type="file" (change)="onFileSelect($event)" name="blogNewImage"
+                                #blogNewImage accept="image/*">
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{ 'Blog Image' | translate }}</mat-label>
+                                <input matInput disabled type="text" value="{{_model.Image}}" #ImageName required>
+                                <a type="button" (click)="blogNewImage.click()" matSuffix>
+                                    <mat-icon>backup</mat-icon>
+                                </a>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <ckeditor [(ngModel)]="_model.BlogContent" #BlogContent="ngModel" id="BlogContent"
+                                name="BlogContent" [data]="_model.BlogContent" [config]="{ language:lang }">
+                            </ckeditor>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{'Blog Menu Type'| translate}}</mat-label>
+                                <select matNativeControl name="BlogMenu" #BlogMenu="ngModel" ng-model="BlogMenuSelect"
+                                    [(ngModel)]="_model.BlogMenuID" required>
+                                    <option *ngFor="let blogMenu of _menuType" [value]="blogMenu.BlogMenuID">
+                                        {{ blogMenu.BlogMenuName | translate }}</option>
+                                </select>
+                                <mat-error *ngIf="BlogMenu.invalid&&BlogMenu.touched">
+                                    {{ 'Choose the type of Blog Menu' | translate }}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <div class="form-group">
+                            <mat-slide-toggle labelPosition="before" color="primary" name="BlogState"
+                                #BlogState="ngModel" [(ngModel)]="_model.BlogState">
+                                <ng-container [ngSwitch]="_model.BlogState">
+                                    <span *ngSwitchCase="1">{{ 'Blog Active' | translate }}</span>
+                                    <span *ngSwitchDefault>{{ 'Blog Pasive' | translate }}</span>
+                                </ng-container>
+                            </mat-slide-toggle>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info w-100">{{'Save'| translate}}</button>
+            </div>
+        </div>
+    </div>
+</form>

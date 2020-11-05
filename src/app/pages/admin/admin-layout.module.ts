@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
@@ -33,8 +34,10 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  BlogAddComponent,
 } from './';
+import { from } from 'rxjs';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -59,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaginationComponent,
     ProjectAddComponent,
     SlideListComponent,
+    BlogAddComponent,
   ],
   imports: [
     CommonModule,
@@ -72,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxPaginationModule,
     NgSearchFilterModule,
     CKEditorModule,
+    MatSlideToggleModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
