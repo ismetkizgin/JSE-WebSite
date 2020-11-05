@@ -17,13 +17,21 @@ import {
   AdminControlSidebarComponent,
   AdminHeaderComponent,
   AdminFooterComponent,
+  AddBlogMenuComponent,
   AdminLayoutComponent,
   PasswordControlWindowComponent,
   ChangePasswordComponent,
   DialogWindowComponent,
-  PaginationComponent
+  PaginationComponent,
 } from '../../components/';
-import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent,SlideListComponent } from './';
+import {
+  DashboardComponent,
+  LoginComponent,
+  UserAddComponent,
+  UserListComponent,
+  SlideListComponent,
+  BlogMenuListComponent,
+} from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +49,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     UserAddComponent,
     PasswordControlWindowComponent,
+    AddBlogMenuComponent,
     DialogWindowComponent,
+    BlogMenuListComponent,
     UserListComponent,
     PaginationComponent,
     SlideListComponent,
