@@ -12,6 +12,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgSearchFilterModule } from 'ng-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CKEditorModule  } from 'ckeditor4-angular';
+
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -31,6 +33,7 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
+  ProjectAddComponent
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,6 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BlogMenuListComponent,
     UserListComponent,
     PaginationComponent,
+    ProjectAddComponent,
     SlideListComponent,
   ],
   imports: [
@@ -67,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     NgxPaginationModule,
     NgSearchFilterModule,
+    CKEditorModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

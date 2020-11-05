@@ -3,4 +3,5 @@ export * from './auth/auth.service';
 export * from './admin-sidebar-item/admin-sidebar-item.service';
 export * from './user/user.service';
 export * from './blog-menu/blog-menu.service';
+export * from './project/project.service';
 export * from './slide/slide.service';
