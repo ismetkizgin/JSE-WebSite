@@ -24,7 +24,7 @@
             <div class="form-group">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>{{ 'Blog Menu Description' | translate }}</mat-label>
-                    <textarea class="textarea" matInput type="text" placeholder="{{ 'Enter Blog Menu Description' | translate }}"
+                    <textarea matInput type="text" placeholder="{{ 'Enter Blog Menu Description' | translate }}"
                         name="BlogMenuDescription" #BlogMenuDescription="ngModel"
                         [(ngModel)]="_model.BlogMenuDescription" required></textarea>
                     <mat-error *ngIf="BlogMenuDescription.invalid&&BlogMenuDescription.touched">

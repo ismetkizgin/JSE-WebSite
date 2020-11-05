@@ -9,20 +9,19 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-blog-menu',
-  templateUrl: './blog-menu.component.html',
-  styleUrls: ['./blog-menu.component.scss']
+  selector: 'app-add-blog-menu',
+  templateUrl: './add-blog-menu.component.html',
+  styleUrls: ['./add-blog-menu.component.scss'],
 })
-export class BlogMenuComponent implements OnInit {
-
+export class AddBlogMenuComponent implements OnInit {
   constructor(
     private _translateService: TranslateService,
     private _snackBar: MatSnackBar,
     private _blogMenuService: BlogMenuService,
     public _router: Router,
-    private dialogRef: MatDialogRef<BlogMenuComponent>,
+    private dialogRef: MatDialogRef<AddBlogMenuComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) { }
+  ) {}
 
   _model: BlogMenu = new BlogMenu();
   _blogMenuListRenew: boolean = false;
@@ -42,7 +41,6 @@ export class BlogMenuComponent implements OnInit {
       this._action = this.insertActionAsync;
     }
   }
-
   async onSave(blogMenuForm: NgForm) {
     let notification: any = {
       message: '',
@@ -50,16 +48,16 @@ export class BlogMenuComponent implements OnInit {
     };
 
     if (blogMenuForm.valid) {
-     /* this._translateService
+      this._translateService
         .get('Blog menu registration completed')
-        .subscribe((value) => (notification.message = value));*/
+        .subscribe((value) => (notification.message = value));
       notification.panelClass = 'notification__success';
       if (!(await this._action(blogMenuForm))) return;
       this.dialogRef.close(this._blogMenuListRenew);
     } else {
-      /*this._translateService
+      this._translateService
         .get('Please fill in the required fields')
-        .subscribe((value) => (notification.message = value));*/
+        .subscribe((value) => (notification.message = value));
       notification.panelClass = 'notification__error';
     }
 
@@ -95,5 +93,4 @@ export class BlogMenuComponent implements OnInit {
       return false;
     }
   }
-
 }
