@@ -11,13 +11,20 @@
             <tbody>
                 <tr *ngFor="let slide of slides | paginate: paginationConfig">
                     <td><img class="slide__image" [src]="slide.SlideImagePath" /></td>
-                    <td></td>
+                    <td>
+                        <ng-container
+                            *ngIf="slide.SlideLink != null && slide.SlideLink != ''; then success else danger">
+                        </ng-container>
+                        <ng-template #success><a [href]="slide.SlideLink"><span class="badge badge-success">Routing
+                                    Active</span></a></ng-template>
+                        <ng-template #danger><span class="badge badge-danger">Routing Pasive</span></ng-template>
+                    </td>
                     <td class="list-button text-right">
                         <a mat-icon-button [matMenuTriggerFor]="menu">
                             <mat-icon class="list-menu">more_vert</mat-icon>
                         </a>
                         <mat-menu #menu="matMenu">
-                            <a mat-menu-item >
+                            <a mat-menu-item>
                                 <mat-icon>edit</mat-icon>
                                 <span>{{ 'Edit' | translate }}</span>
                             </a>
@@ -31,5 +38,5 @@
             </tbody>
         </table>
     </div>
-</div> 
+</div>
 <app-pagination [config]="paginationConfig"></app-pagination>
