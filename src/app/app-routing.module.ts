@@ -12,7 +12,8 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  TeamMembersAddComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -97,6 +98,22 @@ const routes: Routes = [
         component: ProjectAddComponent,
         data: {
           title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'team-member/add',
+        component: TeamMembersAddComponent,
+        data: {
+          title: 'Team Member Add',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'team-member/update/:MemberID',
+        component: TeamMembersAddComponent,
+        data: {
+          title: 'Team Member Update',
           icon: 'fa fa-2x fa-user',
         }
       }
