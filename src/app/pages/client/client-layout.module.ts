@@ -16,6 +16,7 @@ import {
   ClientNavbarComponent,
   ClientBannerComponent,
   SliderComponent,
+  ClientFooterComponent
 } from '../../components/';
 import {
   HomepageComponent,
@@ -40,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TeamMembersComponent,
     ProjectsComponent,
     BlogsComponent,
+    ClientFooterComponent
   ],
   imports: [
     CommonModule,
