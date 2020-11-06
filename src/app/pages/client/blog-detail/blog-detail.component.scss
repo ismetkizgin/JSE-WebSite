@@ -1,61 +1,50 @@
-h1,
-h2,
-h3 {
-  margin: 0 0 0.35em;
-  font-family: "Lucida Console", Courier, monospace;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 28px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-p {
-  margin: 0 0 1.15em;
-  text-indent:50px;
-}
-
-p + h2 {
-  margin-top: 1.5em;
-}
-
-.container {
-  max-width: 90%;
-  height: 100px;
-  margin-left: 40px;
-  margin-right: auto;
-  padding: 24px;
-}
-
 header {
   background-color: #353535;
   color: #fff;
+
+  .container {
+    max-width: 90%;
+    height: 100px;
+    margin-left: 40px;
+    margin-right: auto;
+    padding: 24px;
+  }
 }
 
-body > footer {
-  border-top: 2px solid rebeccapurple;
-}
+.blog {
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 0.35em;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+  }
 
-blockquote {
-  background: linear-gradient(45deg, #eddbff, transparent);
-  color: rebeccapurple;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 1em;
-  border-radius: 4px;
-}
+  h1 {
+    font-size: 40px;
+  }
 
-.img--align-left {
-  float: left; /* replaces the style previously inherited by the browser */
-  margin: 0 16px 16px -20px;
-  border-radius: 10px
-}
+  h2 {
+    font-size: 28px;
+  }
 
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0 0 1.15em;
+    text-indent: 50px;
+  }
+
+  p + h2 {
+    margin-top: 1.5em;
+  }
+
+  &__images {
+    border-radius: 10px;
+    width: 100%;
+    height: 65vh;
+    margin-bottom: 20px;
+  }
+}
