@@ -17,6 +17,7 @@ import {
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
+  ContactComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
       }
     ],
   },
