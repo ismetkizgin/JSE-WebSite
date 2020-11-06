@@ -12,7 +12,8 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  BlogDetailComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -20,7 +21,10 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      { path: '', component: HomepageComponent },
+      { path: '', component: BlogDetailComponent }
+    ],
   },
   {
     path: 'admin',
