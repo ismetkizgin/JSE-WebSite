@@ -13,6 +13,7 @@ export class LanguageService {
   }
 
   getLanguage() {
-    return localStorage.getItem('language');
+    // return localStorage.getItem('language');
+    return 'en';
   }
 }
