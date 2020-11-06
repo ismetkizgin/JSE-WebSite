@@ -1,30 +1,36 @@
-<div class="row mt-2">
-    <div class="col-md-3 col-sm-12 ml-auto ">
-        <mat-form-field>
-            <mat-label>{{ 'Search' | translate }}</mat-label>
-            <input matInput type="text" [(ngModel)]="searchText"
-                placeholder="{{ 'Enter Words for Search' | translate }}" name="SearchText">
-            <a type="button" matSuffix [attr.aria-label]="'Search'">
-                <mat-icon>search</mat-icon>
-            </a>
-        </mat-form-field>
-    </div>
-</div>
 <div class="container mt-3">
-    <div class="card" *ngFor="let blog of _model | filter:searchText | paginate: paginationConfig">
-        <div class="row">
-            <div class="col-md-4 m-auto col-12">
-                <img src={{blog.BlogImagePath}} width="100%" class="blog-img bg-info">
+    <div class="row mt-2">
+        <div class="col-md-3 col-sm-12 ml-auto ">
+            <mat-form-field>
+                <mat-label>{{ 'Search' | translate }}</mat-label>
+                <input matInput type="text" [(ngModel)]="searchText"
+                    placeholder="{{ 'Enter Words for Search' | translate }}" name="SearchText">
+                <a type="button" matSuffix [attr.aria-label]="'Search'">
+                    <mat-icon>search</mat-icon>
+                </a>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="card" *ngFor="let blog of blogs | filter:searchText | paginate: paginationConfig">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 m-auto col-12">
+                    <img src={{blog.BlogImagePath}} width="100%" class="blog__image p-2">
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="row pr-2">
+                        <div class="col-12 mt-2">
+                            <h1 class="text-primary p-0 m-0">{{ blog.BlogTitle }}</h1>
+                        </div>
+                        <div class="col-12 border-top blog__description">{{ blog.BlogDescription }} </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-8">
-                <div class="row pr-2">
-                    <div class="col-12 mt-2 font-family"><h2 class="text-primary p-0 m-0">{{blog.BlogTitle}}</h2></div>
-                    <div class="text-primary col-12 font-family">{{blog.BlogUserName}} / {{blog.BlogCreatedDate}}</div>
-                    <div class="col-12 blog-description font-family">{{blog.BlogDescription}} </div>
-                </div>
-                <div class="row mt-2 border-top p-2 w-100 text-right">
-                    <button class="btn btn-primary ml-auto">{{ 'Examine' | translate }}</button>
-                </div>
+        </div>
+        <div class="card-footer">
+            <div class="row col-12"><span class="pb-0">{{ blog.UserNameSurname }} -
+                    {{ blog.BlogCreatedDate | date:'M/dd/yyyy, HH:mm':'+3' }}</span>
+                <button class="btn btn-primary ml-auto">{{ 'Examine' | translate }}</button>
             </div>
         </div>
     </div>

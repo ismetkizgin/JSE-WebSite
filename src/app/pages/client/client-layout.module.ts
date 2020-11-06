@@ -15,7 +15,7 @@ import {
   ClientLayoutComponent,
   ClientNavbarComponent,
   ClientBannerComponent,
-} from '../../components/layouts/client';
+} from '../../components/';
 import { HomepageComponent, ProjectsComponent, BlogsComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,8 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
-    BlogsComponent,
     ProjectsComponent,
+    BlogsComponent
   ],
   imports: [
     CommonModule,
