@@ -1,66 +1,16 @@
-
 <header>
-    <div class="container">
-      <h1>Blog Title</h1>
-      <p>
-        <small>By <em>Lorem Ipsum</em> | Posted on: <em>02/02/2020</em></small>
-      </p>
+  <div class="container">
+    <h1>{{blogs.BlogTitle}}</h1>
+    <p><small>By <em>{{blogs.BlogUserName}}</em> | Date: <em>{{blogs.BlogCreatedDate}}</em></small></p>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12 m-auto">
+      <img src={{blogs.BlogImagePath}} class="img--align-left" width="100%" style="height:65vh" />
     </div>
-  </header>
-  <main>
-    <article class="container">
-      <img
-        src="assets/images/software.jpg"
-        alt=""
-        class="img--align-left"
-        width="500px"
-        height="300px"
-      />
-      <h2>Lorem Ipsum</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
-        cursus euismod. Quisque semper orci eu magna mollis, nec vulputate diam
-        viverra. Suspendisse nec lacinia elit. In varius, sapien sit amet mattis
-        dignissim, massa ante pellentesque erat, a eleifend lectus lorem eget
-        ipsum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
-        cursus euismod. Quisque semper orci eu magna mollis, nec vulputate diam
-        viverra. Suspendisse nec lacinia elit. In varius, sapien sit amet mattis
-        dignissim, massa ante pellentesque erat, a eleifend lectus lorem eget
-        ipsum.
-      </p>
-      <h2>Lorem Ipsum</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
-        cursus euismod. Quisque semper orci eu magna mollis, nec vulputate diam
-        viverra. Suspendisse nec lacinia elit. In varius, sapien sit amet mattis
-        dignissim, massa ante pellentesque erat, a eleifend lectus lorem eget
-        ipsum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
-        cursus euismod. Quisque semper orci eu magna mollis, nec vulputate diam
-        viverra. Suspendisse nec lacinia elit. In varius, sapien sit amet mattis
-        dignissim, massa ante pellentesque erat, a eleifend lectus lorem eget
-        ipsum.
-      </p>
-      <h3>Lorem Ipsum</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
-        cursus euismod.
-      </p>
-      <blockquote>
-        <p>"Lorem ipsum dolor sit amet."</p>
-        <footer>- <cite>Lorem Ipsum</cite></footer>
-      </blockquote>
-    </article>
-  </main>
-  <footer>
-    <div class="container"></div>
-  </footer>
-  
+    <div class="col-md-8 col-sm-10 col-12 m-auto">
+      <p class="pr-2">{{blogs.BlogContent}}</p>
+    </div>
+  </div>
+</div>

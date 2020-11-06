@@ -23,7 +23,7 @@ const routes: Routes = [
     component: ClientLayoutComponent,
     children: [
       { path: '', component: HomepageComponent },
-      { path: '', component: BlogDetailComponent }
+      { path: 'blog/detail', component: BlogDetailComponent }
     ],
   },
   {
