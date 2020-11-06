@@ -13,7 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
-  TeamMemberListComponent
+  TeamMemberListComponent,
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,

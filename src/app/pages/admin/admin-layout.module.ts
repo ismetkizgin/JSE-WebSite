@@ -34,7 +34,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
-  TeamMemberListComponent
+  TeamMemberListComponent,
   ProjectListComponent,
   BlogAddComponent,
 } from './';
