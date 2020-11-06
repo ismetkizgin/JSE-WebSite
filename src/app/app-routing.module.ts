@@ -110,7 +110,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'team-member/update/:MemberID',
+        path: 'team-member/edit/:MemberID',
         component: TeamMembersAddComponent,
         data: {
           title: 'Team Member Update',

@@ -6,5 +6,6 @@ export class TeamMember {
     TeamMemberLinkedin: string;
     TeamMemberDescription: string;
     TeamMemberImagePath: string;
+    Image: File;
     TeamMemberCompany: string;
 }

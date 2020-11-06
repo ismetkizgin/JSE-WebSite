@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TeamMember} from '../../../models';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService, ProjectService, LanguageService, TeamMemberService} from '../../../utils';
+import {  TeamMemberService} from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -39,6 +39,10 @@ export class TeamMembersAddComponent implements OnInit {
     }
   }
 
+  onFileSelect(event) {
+    this._model.Image = event.target.files[0];
+  }
+
   async onSave(teamForm: NgForm) {
     let notification: any = {
       message: '',
@@ -68,8 +72,17 @@ export class TeamMembersAddComponent implements OnInit {
 
   async insertActionAsync(teamForm: NgForm) {
     try {
-      console.log(teamForm);
-      await this._teamMemberService.insertAsync(teamForm.value);
+      const formData = new FormData();
+      formData.append('Image', this._model.Image);
+      formData.set('TeamMemberName', teamForm.value.TeamMemberName);
+      formData.set('TeamMemberTitle', teamForm.value.TeamMemberTitle);
+      formData.set('TeamMemberGithub', teamForm.value.TeamMemberGithub);
+      formData.set('TeamMemberLinkedin', teamForm.value.TeamMemberLinkedin);
+      formData.set('TeamMemberDescription', teamForm.value.TeamMemberDescription);
+      formData.set('TeamMemberCompany', teamForm.value.TeamMemberCompany);
+
+      await this._teamMemberService.insertAsync(formData);
+      this._model.Image = null;
       teamForm.resetForm();
       return true;
     } catch (error) {
@@ -80,13 +93,20 @@ export class TeamMembersAddComponent implements OnInit {
 
   async updateActionAsync(teamForm: NgForm) {
     try {
-      await this._teamMemberService.updateAsync(
-        Object.assign(teamForm.value, {
-          ProjectID: parseInt(
-            this._activatedRoute.snapshot.paramMap.get('MemberID')
-          ),
-        })
+      const formData = new FormData();
+      if (this._model.Image) formData.append('Image', this._model.Image);
+      formData.set('TeamMemberName', teamForm.value.TeamMemberName);
+      formData.set('TeamMemberTitle', teamForm.value.TeamMemberTitle);
+      formData.set('TeamMemberGithub', teamForm.value.TeamMemberGithub);
+      formData.set('TeamMemberLinkedin', teamForm.value.TeamMemberLinkedin);
+      formData.set('TeamMemberDescription', teamForm.value.TeamMemberDescription);
+      formData.set('TeamMemberCompany', teamForm.value.TeamMemberCompany);
+      formData.set(
+        'TeamMemberID',
+        this._activatedRoute.snapshot.paramMap.get('MemberID')
       );
+
+      await this._teamMemberService.updateAsync(formData);
       return true;
     } catch (error) {
       this._teamMemberService.errorNotification(error);
