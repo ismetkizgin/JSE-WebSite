@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fuild p-3">
     <div class="row pt-3">
-        <div class="col-12 col-md-8 col-lg-6 m-auto" *ngFor="let teamMember of teamMembers">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-12 m-auto" *ngFor="let teamMember of teamMembers">
             <div class="card card-widget widget-user">
                 <div class="widget-user-header bg-primary">
                     <h3 class="widget-user-username"> {{ teamMember.TeamMemberName }} </h3>
@@ -31,7 +31,6 @@
                                     <a href="{{ teamMember.TeamMemberLinkedin }}"><i
                                             class="fab fa-linkedin fa-3x"></i></a>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-6">

@@ -5,22 +5,20 @@ import { TeamMemberService } from '../../../utils/services';
 @Component({
   selector: 'app-team-members',
   templateUrl: './team-members.component.html',
-  styleUrls: ['./team-members.component.scss']
+  styleUrls: ['./team-members.component.scss'],
 })
 export class TeamMembersComponent implements OnInit {
+  constructor(private _teamMemberService: TeamMemberService) {}
 
-  constructor(
-    private _teamMemberService: TeamMemberService
-  ) { }
-  
-  teamMembers: TeamMember[];
+  teamMembers: Array<TeamMember>;
 
   async ngOnInit() {
     try {
-      this.teamMembers = <Array<TeamMember>>await this._teamMemberService.listAsync();
+      this.teamMembers = <Array<TeamMember>>(
+        await this._teamMemberService.listAsync()
+      );
     } catch (error) {
       this._teamMemberService.errorNotification(error);
     }
   }
-
 }

@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgSearchFilterModule } from 'ng-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CKEditorModule  } from 'ckeditor4-angular';
-
+import { CKEditorModule } from 'ckeditor4-angular';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -23,6 +23,7 @@ import {
   AdminLayoutComponent,
   PasswordControlWindowComponent,
   ChangePasswordComponent,
+  AddSliderComponent,
   DialogWindowComponent,
   PaginationComponent,
 } from '../../components/';
@@ -33,7 +34,11 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  TeamMemberListComponent,
+  ProjectListComponent,
+  BlogAddComponent,
+  BlogListComponent,
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -49,6 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminHeaderComponent,
     AdminControlSidebarComponent,
     AdminSidebarComponent,
+    AddSliderComponent,
     LoginComponent,
     UserAddComponent,
     PasswordControlWindowComponent,
@@ -59,6 +65,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaginationComponent,
     ProjectAddComponent,
     SlideListComponent,
+    TeamMemberListComponent,
+    ProjectListComponent,
+    BlogAddComponent,
+    BlogListComponent,
   ],
   imports: [
     CommonModule,
@@ -72,6 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxPaginationModule,
     NgSearchFilterModule,
     CKEditorModule,
+    MatSlideToggleModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -1,0 +1,35 @@
+<div ma-dialog-title class="institution-dialog__header">
+    <div class="modal-header">
+        <h2>{{ 'Slider Image Window' | translate}}</h2>
+        <a [mat-dialog-close]="false" class="close-icon">
+            <mat-icon>close</mat-icon>
+        </a>
+    </div>
+</div>
+
+<mat-dialog-content class="mat-typography institution-dialog__content">
+    <form #addSliderForm="ngForm" (ngSubmit)="onSave(addSliderForm)">
+        <div class="form-group">
+            <img *ngIf="slideImage" src="{{slideImage}}" width="100%" height="250px;">
+        </div>
+        <div class="form-group">
+            <input style="display: none" type="file" (change)="onFileSelect($event)" name="SlideImagePath"
+                #SliderImagePath accept="image/*">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Slider Image' | translate }}</mat-label>
+                <input matInput disabled type="text" value="{{slideNewImage?.name}}" #ImageName required>
+                <a type="button" (click)="SliderImagePath.click()" matSuffix>
+                    <mat-icon>backup</mat-icon>
+                </a>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Slider Link' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Slider Link' | translate }}" name="SlideLink"
+                    #SlideLink="ngModel" [(ngModel)]="_model.SlideLink">
+            </mat-form-field>
+        </div>
+        <button type="submit" class="btn btn-info w-100">{{'Save'| translate}}</button>
+    </form>
+</mat-dialog-content>

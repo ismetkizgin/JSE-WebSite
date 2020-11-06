@@ -13,7 +13,13 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
-  TeamMembersComponent
+  TeamMembersComponent,
+  BlogsComponent,
+  TeamMemberListComponent,
+  ProjectsComponent,
+  ProjectListComponent,
+  BlogAddComponent,
+  BlogListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -24,11 +30,31 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomepageComponent
+        component: HomepageComponent,
+        data: {
+          title: 'Anasayfa',
+        },
       },
       {
-        path: 'team/members',
-        component: TeamMembersComponent
+        path: 'projects',
+        component: ProjectsComponent,
+        data: {
+          title: 'Projects',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        data: {
+          title: 'Blogs',
+        },
+      },
+      {
+        path: 'team-members',
+        component: TeamMembersComponent,
+        data: {
+          title: 'Team Members',
+        },
       }
     ],
   },
@@ -100,7 +126,7 @@ const routes: Routes = [
         data: {
           title: 'Project Add',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'project/update/:ProjectID',
@@ -108,14 +134,54 @@ const routes: Routes = [
         data: {
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',
-        }
-      }
+        },
+      },
+      {
+        path: 'blog/add',
+        component: BlogAddComponent,
+        data: {
+          title: 'Blog Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blog/edit/:BlogID',
+        component: BlogAddComponent,
+        data: {
+          title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogListComponent,
+        data: {
+          title: 'Blog List',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'projects',
+        component: ProjectListComponent,
+        data: {
+          title: 'Project Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'team-members',
+        component: TeamMemberListComponent,
+        data: {
+          title: 'Team Member List',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
     ],
   },
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'ismet w' },
+    data: { title: 'Login' },
   },
 ];
 
