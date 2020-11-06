@@ -12,7 +12,8 @@ import {
   UserListComponent,
   SlideListComponent,
   BlogMenuListComponent,
-  ProjectAddComponent
+  ProjectAddComponent,
+  BlogsComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -20,7 +21,17 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      { path: '', component: HomepageComponent },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        data: {
+          title: 'Blogs',
+          icon: 'fa fa-2x fa-home',
+        },
+      },
+  ],
   },
   {
     path: 'admin',
