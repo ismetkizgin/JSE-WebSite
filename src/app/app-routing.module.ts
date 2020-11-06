@@ -13,6 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  TeamMemberListComponent,
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
@@ -135,7 +136,15 @@ const routes: Routes = [
           title: 'Project Add',
           icon: 'fa fa-2x fa-user',
         }
-      }
+      },
+      {
+        path: 'team-members',
+        component: TeamMemberListComponent,
+        data: {
+          title: 'Team Member List',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
     ],
   },
   {

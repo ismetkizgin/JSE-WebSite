@@ -34,6 +34,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  TeamMemberListComponent,
   ProjectListComponent,
   BlogAddComponent,
 } from './';
@@ -62,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaginationComponent,
     ProjectAddComponent,
     SlideListComponent,
+    TeamMemberListComponent,
     ProjectListComponent,
     BlogAddComponent,
   ],
