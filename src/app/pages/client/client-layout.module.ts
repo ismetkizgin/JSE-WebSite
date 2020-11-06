@@ -24,6 +24,7 @@ import {
   BlogDetailComponent,
   BlogsComponent,
   TeamMembersComponent,
+  ContactComponent,
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,6 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
+    ProjectsComponent,
+    ContactComponent,
     BlogDetailComponent,
     SliderComponent,
     TeamMembersComponent,

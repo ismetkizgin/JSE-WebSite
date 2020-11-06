@@ -22,6 +22,7 @@ import {
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
+  ContactComponent,
   BlogListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
@@ -66,6 +67,13 @@ const routes: Routes = [
           title: 'Blog Detail',
         },
       },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        data: {
+          title: 'Cantact',
+        },
+      }
     ],
   },
   {
