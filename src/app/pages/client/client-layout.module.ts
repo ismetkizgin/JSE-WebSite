@@ -20,6 +20,7 @@ import {
 import {
   HomepageComponent,
   ProjectsComponent,
+  BlogDetailComponent,
   BlogsComponent,
   TeamMembersComponent,
 } from './';
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
+    BlogDetailComponent,
     SliderComponent,
     TeamMembersComponent,
     ProjectsComponent,

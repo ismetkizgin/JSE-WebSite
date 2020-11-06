@@ -13,6 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  BlogDetailComponent,
   TeamMembersAddComponent,
   TeamMembersComponent,
   BlogsComponent,
@@ -56,7 +57,14 @@ const routes: Routes = [
         data: {
           title: 'Team Members',
         },
-      }
+      },
+      {
+        path: 'blog-detail/:BlogID',
+        component: BlogDetailComponent,
+        data: {
+          title: 'Blog Detail',
+        },
+      },
     ],
   },
   {
@@ -183,7 +191,7 @@ const routes: Routes = [
         data: {
           title: 'Team Member Add',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'team-member/edit/:MemberID',
@@ -191,8 +199,8 @@ const routes: Routes = [
         data: {
           title: 'Team Member Update',
           icon: 'fa fa-2x fa-user',
-        }
-      }
+        },
+      },
     ],
   },
   {
@@ -206,5 +214,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingComponents = [];
