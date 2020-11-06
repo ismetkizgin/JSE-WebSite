@@ -13,6 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  TeamMembersAddComponent,
   TeamMembersComponent,
   BlogsComponent,
   TeamMemberListComponent,
@@ -176,6 +177,22 @@ const routes: Routes = [
           icon: 'fa fa-2x fa-user',
         },
       },
+      {
+        path: 'team-member/add',
+        component: TeamMembersAddComponent,
+        data: {
+          title: 'Team Member Add',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'team-member/edit/:MemberID',
+        component: TeamMembersAddComponent,
+        data: {
+          title: 'Team Member Update',
+          icon: 'fa fa-2x fa-user',
+        }
+      }
     ],
   },
   {
