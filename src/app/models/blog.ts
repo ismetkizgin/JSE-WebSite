@@ -1,4 +1,5 @@
 export class Blog {
+  BlogID: number;
   BlogMenuID: number;
   BlogImagePath: string;
   BlogDescription: string;

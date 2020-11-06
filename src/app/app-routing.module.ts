@@ -18,6 +18,7 @@ import {
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
+  BlogListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -140,6 +141,14 @@ const routes: Routes = [
         component: BlogAddComponent,
         data: {
           title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogListComponent,
+        data: {
+          title: 'Blog List',
           icon: 'fa fa-2x fa-user',
         },
       },
