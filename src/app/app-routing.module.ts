@@ -13,7 +13,8 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
-  BlogAddComponent
+  ProjectListComponent,
+  BlogAddComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -116,13 +117,21 @@ const routes: Routes = [
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',
         }
+      },
+      {
+        path: 'projects',
+        component: ProjectListComponent,
+        data: {
+          title: 'Project Add',
+          icon: 'fa fa-2x fa-user',
+        }
       }
     ],
   },
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'ismet w' },
+    data: { title: 'Login' },
   },
 ];
 

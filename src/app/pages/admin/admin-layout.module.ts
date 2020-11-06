@@ -34,8 +34,10 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  ProjectListComponent,
   BlogAddComponent,
 } from './';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -60,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaginationComponent,
     ProjectAddComponent,
     SlideListComponent,
+    ProjectListComponent,
     BlogAddComponent,
   ],
   imports: [
