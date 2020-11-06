@@ -13,6 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
 } from './pages';
@@ -22,7 +23,16 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      {
+        path: '',
+        component: HomepageComponent
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent
+      }
+    ],
   },
   {
     path: 'admin',
@@ -139,5 +149,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingComponents = [];

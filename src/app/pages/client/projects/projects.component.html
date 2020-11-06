@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row projects__padding">
+        <div class="col-12 d-flex align-items-stretch" *ngFor="let project of projects">
+            <div class="card bg-light card-outline card-primary w-100">
+                <div class="card-header border-bottom-0">
+                    <h2> {{ project.ProjectName }} </h2>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="row" [innerHTML]="project.ProjectDescription">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
