@@ -16,7 +16,12 @@ import {
   ClientNavbarComponent,
   ClientBannerComponent,
 } from '../../components/';
-import { HomepageComponent, ProjectsComponent, BlogsComponent } from './';
+import {
+  HomepageComponent,
+  ProjectsComponent,
+  BlogsComponent,
+  TeamMembersComponent,
+} from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,8 +33,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
+    TeamMembersComponent,
     ProjectsComponent,
-    BlogsComponent
+    BlogsComponent,
   ],
   imports: [
     CommonModule,

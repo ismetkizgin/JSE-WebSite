@@ -13,6 +13,7 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  TeamMembersComponent,
   BlogsComponent,
   TeamMemberListComponent,
   ProjectsComponent,
@@ -48,6 +49,13 @@ const routes: Routes = [
           title: 'Blogs',
         },
       },
+      {
+        path: 'team-members',
+        component: TeamMembersComponent,
+        data: {
+          title: 'Team Members',
+        },
+      }
     ],
   },
   {
@@ -181,5 +189,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingComponents = [];
