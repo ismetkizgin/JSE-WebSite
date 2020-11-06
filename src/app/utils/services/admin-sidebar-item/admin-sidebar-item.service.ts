@@ -35,26 +35,81 @@ export class AdminSidebarItemService {
       authorize: [Roles.Root],
     },
     {
-      title: 'Institution Transactions',
+      title: 'Blog Transactions',
       icon: 'fa fa-building',
-      linkActive: ['/admin/institutions', '/admin/institution/add'],
+      linkActive: ['/admin/blogs', '/admin/blog/add', '/admin/blog-menus'],
       submenuShowHide: this.getChildUrlActiveState([
-        'institution',
-        'institutions',
+        'blogs',
+        'blog',
+        'blog-menus'
       ]),
       submenu: [
         {
-          title: 'Institution List',
+          title: 'Blog List',
           icon: 'fa fa-map',
-          link: '/admin/institutions',
+          link: '/admin/blogs',
         },
         {
-          title: 'Institution Add',
+          title: 'Add Blog',
           icon: 'fa fa-plus-square',
-          link: '/admin/institution/add',
+          link: '/admin/blog/add',
+        },
+        {
+          title: 'Blog Menu List',
+          icon: 'fa fa-plus-square',
+          link: '/admin/blog-menus',
         },
       ],
       authorize: [Roles.Root],
+    },
+    {
+      title: 'Project Transactions',
+      icon: 'fa fa-building',
+      linkActive: ['/admin/project/add', '/admin/projects'],
+      submenuShowHide: this.getChildUrlActiveState([
+        'project',
+        'projects',
+      ]),
+      submenu: [
+        {
+          title: 'Project List',
+          icon: 'fa fa-map',
+          link: '/admin/projects',
+        },
+        {
+          title: 'Add Project',
+          icon: 'fa fa-plus-square',
+          link: '/admin/project/add',
+        },
+      ],
+      authorize: [Roles.Root],
+    },
+    {
+      title: 'Team Transactions',
+      icon: 'fa fa-building',
+      linkActive: ['/admin/team-member/add', '/admin/team-members'],
+      submenuShowHide: this.getChildUrlActiveState([
+        'team-members',
+        'team-member',
+      ]),
+      submenu: [
+        {
+          title: 'Team Member List',
+          icon: 'fa fa-map',
+          link: '/admin/team-members',
+        },
+        {
+          title: 'Add Team Member',
+          icon: 'fa fa-plus-square',
+          link: '/admin/team-member/add',
+        },
+      ],
+      authorize: [Roles.Root],
+    },
+    {
+      title: 'Slide List',
+      icon: 'fa fa-map',
+      link: '/admin/slides',
     },
   ];
 

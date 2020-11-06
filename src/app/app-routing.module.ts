@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ChildActivationEnd } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import {
   ClientLayoutComponent,
   AdminLayoutComponent,
@@ -9,6 +9,17 @@ import {
   DashboardComponent,
   LoginComponent,
   UserAddComponent,
+  UserListComponent,
+  SlideListComponent,
+  BlogMenuListComponent,
+  ProjectAddComponent,
+  TeamMembersComponent,
+  BlogsComponent,
+  TeamMemberListComponent,
+  ProjectsComponent,
+  ProjectListComponent,
+  BlogAddComponent,
+  BlogListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -16,7 +27,36 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      {
+        path: '',
+        component: HomepageComponent,
+        data: {
+          title: 'Anasayfa',
+        },
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent,
+        data: {
+          title: 'Projects',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        data: {
+          title: 'Blogs',
+        },
+      },
+      {
+        path: 'team-members',
+        component: TeamMembersComponent,
+        data: {
+          title: 'Team Members',
+        },
+      }
+    ],
   },
   {
     path: 'admin',
@@ -49,10 +89,90 @@ const routes: Routes = [
         },
       },
       {
+        path: 'users',
+        component: UserListComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
         path: 'user/profile',
         component: UserAddComponent,
         data: {
           title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blog-menus',
+        component: BlogMenuListComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'slides',
+        component: SlideListComponent,
+        data: {
+          title: 'User Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'project/add',
+        component: ProjectAddComponent,
+        data: {
+          title: 'Project Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'project/update/:ProjectID',
+        component: ProjectAddComponent,
+        data: {
+          title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blog/add',
+        component: BlogAddComponent,
+        data: {
+          title: 'Blog Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blog/edit/:BlogID',
+        component: BlogAddComponent,
+        data: {
+          title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogListComponent,
+        data: {
+          title: 'Blog List',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'projects',
+        component: ProjectListComponent,
+        data: {
+          title: 'Project Add',
+          icon: 'fa fa-2x fa-user',
+        },
+      },
+      {
+        path: 'team-members',
+        component: TeamMemberListComponent,
+        data: {
+          title: 'Team Member List',
           icon: 'fa fa-2x fa-user',
         },
       },
@@ -61,7 +181,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'ismet w' },
+    data: { title: 'Login' },
   },
 ];
 
@@ -69,5 +189,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingComponents = [];

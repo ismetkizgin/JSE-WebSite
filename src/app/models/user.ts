@@ -4,5 +4,6 @@ export class User {
   UserLastName: string;
   UserEmail: string;
   UserPassword: string;
+  UserNewPassword: string;
   UserTypeName: string;
 }
