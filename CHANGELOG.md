@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.4.0...v1.5.0) (2020-11-06)
+
+
+### Features
+
+* added blog add and update form page ([abc1549](https://github.com/ismetkizgin/JSE-WebSite/commit/abc154998992985c572ac0b917732940513dad6f))
+* added blog list page ([ef6aec1](https://github.com/ismetkizgin/JSE-WebSite/commit/ef6aec1e19769e9a3e5eace06445f8f5ad330617))
+* added blog service ([989e6d0](https://github.com/ismetkizgin/JSE-WebSite/commit/989e6d053adb11ed35b679b757c698420f8efa05))
+* added contact page design ([3442f88](https://github.com/ismetkizgin/JSE-WebSite/commit/3442f88b8faf447392bbfea119dd8f00c0d72813))
+* added homepage slider component ([b06fa48](https://github.com/ismetkizgin/JSE-WebSite/commit/b06fa48fc7cd2cc44681c75a0aa1d48717d4970c))
+* added project add and update form page ([2a6cb68](https://github.com/ismetkizgin/JSE-WebSite/commit/2a6cb68baf113d34671237af259d6cb89eae505c))
+* added project service ([5aae846](https://github.com/ismetkizgin/JSE-WebSite/commit/5aae846402ac4ca7691418c8ea836808abf46bca))
+* added projects page component ([831cd43](https://github.com/ismetkizgin/JSE-WebSite/commit/831cd43aeed3cf99bd496080b4789be358b2cae6))
+* added slide add window ([516f91c](https://github.com/ismetkizgin/JSE-WebSite/commit/516f91c801e96687b6ac891dac0c7424865bcf64))
+* added slide service ([64ea3cf](https://github.com/ismetkizgin/JSE-WebSite/commit/64ea3cf7ae6f3ab5d1814d8bbd11377cff9cc518))
+* added team member list page ([fa2aae2](https://github.com/ismetkizgin/JSE-WebSite/commit/fa2aae25f9bac9d14d884036fab453e9fd8ca2d4))
+* added team member service ([65c34a2](https://github.com/ismetkizgin/JSE-WebSite/commit/65c34a2275a801bba187fd2e31fecb3a6dc7bede))
+* added team members add and update form page ([462ce73](https://github.com/ismetkizgin/JSE-WebSite/commit/462ce73f83b9556f18834258b4e6829d39035ccc))
+* added team-member page component ([f3bad38](https://github.com/ismetkizgin/JSE-WebSite/commit/f3bad38b370660bbdd4f439f78c4bb1f9b983c6b))
+* designed blog page ([2c0e6aa](https://github.com/ismetkizgin/JSE-WebSite/commit/2c0e6aa3f2ac6558f4f74334ce384052ca6d3e25))
+* designing the project list page ([a9351e9](https://github.com/ismetkizgin/JSE-WebSite/commit/a9351e9ebbe332933193b039af33062189ca23c6))
+* sidebar menu redirects complete ([68cf659](https://github.com/ismetkizgin/JSE-WebSite/commit/68cf659049b40ae78d55034f32ded57ad71bed01))
+
+
+### Bug Fixes
+
+* fix get token error for blog find service ([426f2f2](https://github.com/ismetkizgin/JSE-WebSite/commit/426f2f2ef8af196d792632e7a5820fcc2ac240e3))
+
 ## 1.4.0 (2020-11-05)
 
 
