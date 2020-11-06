@@ -3,36 +3,36 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
-import { AuthService, SlideService } from '../../utils/services';
+import { SlideService } from '../../utils/services';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Slider } from '../../models';
+import { Slide } from '../../models';
 
 @Component({
   selector: 'app-add-slider',
   templateUrl: './add-slider.component.html',
-  styleUrls: ['./add-slider.component.scss']
+  styleUrls: ['./add-slider.component.scss'],
 })
 export class AddSliderComponent implements OnInit {
-
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _snackBar: MatSnackBar,
-    private _router:Router,
+    private _router: Router,
     private _translateService: TranslateService,
-    private _authService: AuthService,
     private dialogRef: MatDialogRef<AddSliderComponent>,
-    private _slideService:SlideService
-  ) { }
+    private _slideService: SlideService
+  ) {}
 
-  sliderImage: any = this.data.sliderImagePath;
-  sliderNewImage: File = null;
-  _model:Slider=new Slider();
-  _action:Function;
-  _addSliderRenew:boolean=false;
+  slideImage: any;
+  slideNewImage: File;
+  _model: Slide = new Slide();
+  _action: Function;
+  _addSliderRenew: boolean = false;
 
   ngOnInit(): void {
-    if (this.data?.SliderImagePath != null) {
+    console.log(this.data);
+    if (this.data?.SlideImagePath != null) {
+      this.slideImage = this.data.SlideImagePath;
       try {
         this._model = this.data;
       } catch (error) {
@@ -45,18 +45,18 @@ export class AddSliderComponent implements OnInit {
     }
   }
 
-  async onSave(addSliderForm: NgForm) {
+  async onSave(addSlideForm: NgForm) {
     let notification: any = {
       message: '',
       panelClass: '',
     };
 
-    if (addSliderForm.valid) {
+    if (addSlideForm.valid) {
       this._translateService
         .get('Slide registration completed')
         .subscribe((value) => (notification.message = value));
       notification.panelClass = 'notification__success';
-      if (!(await this._action(addSliderForm))) return;
+      if (!(await this._action(addSlideForm))) return;
       this.dialogRef.close(this._addSliderRenew);
     } else {
       this._translateService
@@ -73,10 +73,15 @@ export class AddSliderComponent implements OnInit {
     });
   }
 
-  async insertActionAsync(addSliderForm: NgForm) {
+  async insertActionAsync(addSlideForm: NgForm) {
     try {
-      await this._slideService.insertAsync(addSliderForm.value);
-      addSliderForm.resetForm();
+      const formData = new FormData();
+      formData.append('Image', this.slideNewImage);
+      if (addSlideForm.value.SlideLink)
+        formData.set('SlideLink', addSlideForm.value.SlideLink);
+
+      await this._slideService.insertAsync(formData);
+      addSlideForm.resetForm();
       this._addSliderRenew = true;
       return true;
     } catch (error) {
@@ -85,13 +90,16 @@ export class AddSliderComponent implements OnInit {
     }
   }
 
-  async updateActionAsync(addSliderForm: NgForm) {
+  async updateActionAsync(addSlideForm: NgForm) {
     try {
-      await this._slideService.updateAsync(
-        Object.assign(addSliderForm.value, {
-          BlogMenuID: this.data.BlogMenuID,
-        })
-      );
+      const formData = new FormData();
+      if (this.slideNewImage) formData.append('Image', this.slideNewImage);
+      formData.set('SlideID', this.data.SlideID);
+      if (addSlideForm.value.SlideLink)
+        formData.set('SlideLink', addSlideForm.value.SlideLink);
+
+      this.data.SlideImagePath = this.slideImage;
+      await this._slideService.updateAsync(formData);
       return true;
     } catch (error) {
       this._slideService.errorNotification(error);
@@ -100,21 +108,20 @@ export class AddSliderComponent implements OnInit {
   }
 
   onFileSelect(event) {
-    this.sliderNewImage = event.target.files[0];
+    this.slideNewImage = event.target.files[0];
     this.preview();
   }
 
   preview() {
-    var mimeType = this.sliderNewImage.type;
+    var mimeType = this.slideNewImage.type;
     if (mimeType.match(/image\/*/) == null) {
       return;
     }
 
     var reader = new FileReader();
-    reader.readAsDataURL(this.sliderNewImage);
+    reader.readAsDataURL(this.slideNewImage);
     reader.onload = (_event) => {
-      this.sliderImage = reader.result;
+      this.slideImage = reader.result;
     };
   }
-
 }
