@@ -15,6 +15,7 @@ import {
   ClientLayoutComponent,
   ClientNavbarComponent,
   ClientBannerComponent,
+  SliderComponent,
 } from '../../components/';
 import {
   HomepageComponent,
@@ -33,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
+    SliderComponent,
     TeamMembersComponent,
     ProjectsComponent,
     BlogsComponent,
