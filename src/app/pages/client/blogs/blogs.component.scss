@@ -1,0 +1,12 @@
+.blog {
+  &__image {
+    max-height: 400px;
+    min-height: 200px;
+    border-radius: 20px;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

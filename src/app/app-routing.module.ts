@@ -13,10 +13,12 @@ import {
   SlideListComponent,
   BlogMenuListComponent,
   ProjectAddComponent,
+  BlogsComponent,
   TeamMemberListComponent,
   ProjectsComponent,
   ProjectListComponent,
   BlogAddComponent,
+  BlogListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -27,12 +29,25 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomepageComponent
+        component: HomepageComponent,
+        data: {
+          title: 'Anasayfa',
+        },
       },
       {
         path: 'projects',
-        component: ProjectsComponent
-      }
+        component: ProjectsComponent,
+        data: {
+          title: 'Projects',
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        data: {
+          title: 'Blogs',
+        },
+      },
     ],
   },
   {
@@ -103,7 +118,7 @@ const routes: Routes = [
         data: {
           title: 'Project Add',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'project/update/:ProjectID',
@@ -111,7 +126,7 @@ const routes: Routes = [
         data: {
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'blog/add',
@@ -119,7 +134,7 @@ const routes: Routes = [
         data: {
           title: 'Blog Add',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'blog/edit/:BlogID',
@@ -127,7 +142,15 @@ const routes: Routes = [
         data: {
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',
-        }
+        },
+      },
+      {
+        path: 'blogs',
+        component: BlogListComponent,
+        data: {
+          title: 'Blog List',
+          icon: 'fa fa-2x fa-user',
+        },
       },
       {
         path: 'projects',
@@ -135,7 +158,7 @@ const routes: Routes = [
         data: {
           title: 'Project Add',
           icon: 'fa fa-2x fa-user',
-        }
+        },
       },
       {
         path: 'team-members',
@@ -158,5 +181,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingComponents = [];
