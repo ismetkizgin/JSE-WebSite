@@ -21,8 +21,7 @@ export class BlogService {
     return await this._apiFetchService.requestAsync(
       'GET',
       `blog/${blogID}`,
-      null,
-      true
+      null
     );
   }
 
