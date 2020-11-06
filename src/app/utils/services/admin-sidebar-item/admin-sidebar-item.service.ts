@@ -32,7 +32,7 @@ export class AdminSidebarItemService {
           link: '/admin/user/add',
         },
       ],
-      authorize: [Roles.Root],
+      authorize: [Roles.Root, Roles.Administrator],
     },
     {
       title: 'Blog Transactions',
@@ -41,7 +41,7 @@ export class AdminSidebarItemService {
       submenuShowHide: this.getChildUrlActiveState([
         'blogs',
         'blog',
-        'blog-menus'
+        'blog-menus',
       ]),
       submenu: [
         {
@@ -58,18 +58,15 @@ export class AdminSidebarItemService {
           title: 'Blog Menu List',
           icon: 'fa fa-plus-square',
           link: '/admin/blog-menus',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       ],
-      authorize: [Roles.Root],
     },
     {
       title: 'Project Transactions',
       icon: 'fa fa-building',
       linkActive: ['/admin/project/add', '/admin/projects'],
-      submenuShowHide: this.getChildUrlActiveState([
-        'project',
-        'projects',
-      ]),
+      submenuShowHide: this.getChildUrlActiveState(['project', 'projects']),
       submenu: [
         {
           title: 'Project List',
@@ -82,7 +79,6 @@ export class AdminSidebarItemService {
           link: '/admin/project/add',
         },
       ],
-      authorize: [Roles.Root],
     },
     {
       title: 'Team Transactions',
@@ -104,7 +100,6 @@ export class AdminSidebarItemService {
           link: '/admin/team-member/add',
         },
       ],
-      authorize: [Roles.Root],
     },
     {
       title: 'Slide List',

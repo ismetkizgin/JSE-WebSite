@@ -4,6 +4,7 @@ import {
   ClientLayoutComponent,
   AdminLayoutComponent,
 } from './components/layouts';
+import { Roles } from './models';
 import {
   HomepageComponent,
   DashboardComponent,
@@ -78,7 +79,7 @@ const routes: Routes = [
         component: DashboardComponent,
         data: {
           title: 'Dashboard',
-          icon: 'fa fa-2x fa-home',
+          icon: 'fa fa-2x fa-home'
         },
       },
       {
@@ -87,6 +88,7 @@ const routes: Routes = [
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
@@ -95,6 +97,7 @@ const routes: Routes = [
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
@@ -103,6 +106,7 @@ const routes: Routes = [
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
@@ -119,6 +123,7 @@ const routes: Routes = [
         data: {
           title: 'User Add',
           icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
