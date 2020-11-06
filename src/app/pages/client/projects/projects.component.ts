@@ -9,12 +9,13 @@ import { ProjectService } from '../../../utils/services';
 })
 export class ProjectsComponent implements OnInit {
   constructor(private _projectService: ProjectService) {}
-  projects: Project[];
+  projects: Array<Project>;
 
   async ngOnInit() {
     try {
       this.projects = <Array<Project>>await this._projectService.listAsync();
     } catch (error) {
+      console.log(error);
       this._projectService.errorNotification(error);
     }
   }
