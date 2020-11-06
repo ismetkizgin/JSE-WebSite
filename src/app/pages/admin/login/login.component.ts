@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../utils/services';
-import { LanguageService } from '../../../utils';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { User } from '../../../models/user';
@@ -14,7 +13,6 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   constructor(
     private _authService: AuthService,
-    private _languageService: LanguageService,
     private _snackBar: MatSnackBar,
     private _translateService: TranslateService
   ) {}
@@ -36,9 +34,5 @@ export class LoginComponent implements OnInit {
         panelClass: 'notification__error',
       });
     }
-  }
-
-  useLanguage(language: string) {
-    this._languageService.setLanguage(language);
   }
 }

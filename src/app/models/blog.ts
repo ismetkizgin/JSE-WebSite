@@ -1,9 +1,12 @@
 export class Blog {
   BlogID: number;
-  BlogTitle: string;
+  BlogMenuID: number;
+  BlogImagePath: string;
   BlogDescription: string;
+  UserNameSurname: string;
+  BlogCreatedDate: string;
+  BlogTitle: string;
+  BlogState: boolean;
   Image: File;
   BlogContent: string;
-  BlogState: boolean;
-  BlogMenuID: number;
 }

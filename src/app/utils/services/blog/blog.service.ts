@@ -4,29 +4,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogService {
-
   constructor(
     private _apiFetchService: ApiFetchService,
     private _snackBar: MatSnackBar,
     private _translateService: TranslateService
-  ) { }
+  ) {}
 
-  async listAsync() {
-    return await this._apiFetchService.requestAsync(
-      'GET',
-      `blog`,
-      null
-    );
+  async listAsync(values = null) {
+    return await this._apiFetchService.requestAsync('GET', `blog`, values);
   }
-  
+
   async findAsync(blogID) {
     return await this._apiFetchService.requestAsync(
       'GET',
       `blog/${blogID}`,
-      null,
+      null
+    );
+  }
+
+  async deleteAsync(values) {
+    return await this._apiFetchService.requestAsync(
+      'DELETE',
+      'blog',
+      values,
       true
     );
   }

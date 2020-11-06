@@ -16,12 +16,12 @@ export class AppComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    _translate.addLangs(['tr', 'en']);
-    _translate.setDefaultLang('tr');
+    _translate.addLangs(['en']);
+    _translate.setDefaultLang('en');
 
-    if (_languageService.getLanguage()) {
-      _translate.use(localStorage.getItem('language'));
-    }
+    // if (_languageService.getLanguage()) {
+    //   _translate.use(localStorage.getItem('language'));
+    // }
   }
 
   ngOnInit() {
