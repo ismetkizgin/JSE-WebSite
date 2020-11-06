@@ -5,13 +5,10 @@ import { ProjectService } from '../../../utils/services';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-
-  constructor(
-    private _projectService: ProjectService
-  ) { }
+  constructor(private _projectService: ProjectService) {}
   projects: Project[];
 
   async ngOnInit() {
@@ -21,5 +18,4 @@ export class ProjectsComponent implements OnInit {
       this._projectService.errorNotification(error);
     }
   }
-
 }
