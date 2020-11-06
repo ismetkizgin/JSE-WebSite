@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row team-members__padding">
-        <div class="col-6" *ngFor="let teamMember of teamMembers">
+    <div class="row pt-3">
+        <div class="col-12 col-md-8 col-lg-6 m-auto" *ngFor="let teamMember of teamMembers">
             <div class="card card-widget widget-user">
                 <div class="widget-user-header bg-primary">
                     <h3 class="widget-user-username"> {{ teamMember.TeamMemberName }} </h3>
@@ -9,8 +9,8 @@
                 <div class="widget-user-image">
                     <img class="img-circle elevation-2" src="assets/images/default/user.png" alt="User Avatar">
                 </div>
-                <div class="card-body">
-                    <div class="row team-members__padding">
+                <div class="card-body mt-3">
+                    <div class="row pt-3">
                         <div class="col-12">
                             <p class="text-center"> {{ teamMember.TeamMemberCompany }} </p>
                         </div>
