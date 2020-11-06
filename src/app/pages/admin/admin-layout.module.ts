@@ -7,11 +7,13 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgSearchFilterModule } from 'ng-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CKEditorModule  } from 'ckeditor4-angular';
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -23,9 +25,21 @@ import {
   ChangePasswordComponent,
   AddSliderComponent,
   DialogWindowComponent,
-  PaginationComponent
+  PaginationComponent,
 } from '../../components/';
-import { DashboardComponent, LoginComponent, UserAddComponent, UserListComponent, BlogMenuListComponent } from './';
+import {
+  DashboardComponent,
+  LoginComponent,
+  UserAddComponent,
+  UserListComponent,
+  SlideListComponent,
+  BlogMenuListComponent,
+  ProjectAddComponent,
+  TeamMemberListComponent,
+  ProjectListComponent,
+  BlogAddComponent,
+} from './';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -48,7 +62,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     DialogWindowComponent,
     BlogMenuListComponent,
     UserListComponent,
-    PaginationComponent
+    PaginationComponent,
+    ProjectAddComponent,
+    SlideListComponent,
+    TeamMemberListComponent,
+    ProjectListComponent,
+    BlogAddComponent,
   ],
   imports: [
     CommonModule,
@@ -61,6 +80,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     NgxPaginationModule,
     NgSearchFilterModule,
+    CKEditorModule,
+    MatSlideToggleModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

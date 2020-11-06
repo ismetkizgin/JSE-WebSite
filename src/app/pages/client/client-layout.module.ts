@@ -9,7 +9,7 @@ import {
   ClientNavbarComponent,
   ClientBannerComponent
 } from '../../components/layouts/client';
-import { HomepageComponent } from './';
+import { HomepageComponent, ProjectsComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -20,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientLayoutComponent,
     HomepageComponent,
     ClientNavbarComponent,
-    ClientBannerComponent
+    ClientBannerComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,

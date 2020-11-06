@@ -4,3 +4,7 @@ export * from './admin-sidebar-item/admin-sidebar-item.service';
 export * from './user/user.service';
 export * from './blog-menu/blog-menu.service';
 export * from './slide/slide.service';
+export * from './project/project.service';
+export * from './slide/slide.service';
+export * from './blog/blog.service';
+export * from './team-member/team-member.service'
