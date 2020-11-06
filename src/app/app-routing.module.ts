@@ -14,6 +14,9 @@ import {
   BlogMenuListComponent,
   ProjectAddComponent,
   TeamMemberListComponent
+  ProjectsComponent,
+  ProjectListComponent,
+  BlogAddComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -21,7 +24,16 @@ const routes: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      {
+        path: '',
+        component: HomepageComponent
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent
+      }
+    ],
   },
   {
     path: 'admin',
@@ -102,7 +114,31 @@ const routes: Routes = [
         }
       },
       {
-        path: 'team-member-list',
+        path: 'blog/add',
+        component: BlogAddComponent,
+        data: {
+          title: 'Blog Add',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'blog/edit/:BlogID',
+        component: BlogAddComponent,
+        data: {
+          title: 'Project Update',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'projects',
+        component: ProjectListComponent,
+        data: {
+          title: 'Project Add',
+          icon: 'fa fa-2x fa-user',
+        }
+      },
+      {
+        path: 'team-members',
         component: TeamMemberListComponent,
         data: {
           title: 'Team Member List',
@@ -114,7 +150,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'ismet w' },
+    data: { title: 'Login' },
   },
 ];
 
@@ -122,5 +158,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingComponents = [];
