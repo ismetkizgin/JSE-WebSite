@@ -110,8 +110,8 @@ const routes: Routes = [
         }
       },
       {
-        path: 'blog/update/:BlogID',
-        component: ProjectAddComponent,
+        path: 'blog/edit/:BlogID',
+        component: BlogAddComponent,
         data: {
           title: 'Project Update',
           icon: 'fa fa-2x fa-user',

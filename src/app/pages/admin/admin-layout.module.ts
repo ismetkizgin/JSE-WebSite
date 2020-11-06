@@ -14,7 +14,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { NgSearchFilterModule } from 'ng-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CKEditorModule  } from 'ckeditor4-angular';
-
 import {
   AdminSidebarComponent,
   AdminControlSidebarComponent,
@@ -37,7 +36,6 @@ import {
   ProjectAddComponent,
   BlogAddComponent,
 } from './';
-import { from } from 'rxjs';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
