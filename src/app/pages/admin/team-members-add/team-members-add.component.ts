@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {TeamMember} from '../../../models';
+import { TeamMember } from '../../../models';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import {  TeamMemberService} from '../../../utils';
+import { TeamMemberService } from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 
 @Component({
   selector: 'app-team-members-add',
   templateUrl: './team-members-add.component.html',
-  styleUrls: ['./team-members-add.component.scss']
+  styleUrls: ['./team-members-add.component.scss'],
 })
 export class TeamMembersAddComponent implements OnInit {
   _action: Function;
@@ -22,19 +21,19 @@ export class TeamMembersAddComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _teamMemberService: TeamMemberService,
     public _router: Router
-  ) { }
+  ) {}
 
   async ngOnInit() {
     const MemberID = this._activatedRoute.snapshot.paramMap.get('MemberID');
     if (MemberID != null) {
       try {
-       this._model = <any>await this._teamMemberService.findAsync(MemberID);
+        this._model = <any>await this._teamMemberService.findAsync(MemberID);
       } catch (error) {
         this._teamMemberService.errorNotification(error);
         this._router.navigateByUrl('admin');
       }
       this._action = this.updateActionAsync;
-    }else {
+    } else {
       this._action = this.insertActionAsync;
     }
   }
@@ -78,7 +77,10 @@ export class TeamMembersAddComponent implements OnInit {
       formData.set('TeamMemberTitle', teamForm.value.TeamMemberTitle);
       formData.set('TeamMemberGithub', teamForm.value.TeamMemberGithub);
       formData.set('TeamMemberLinkedin', teamForm.value.TeamMemberLinkedin);
-      formData.set('TeamMemberDescription', teamForm.value.TeamMemberDescription);
+      formData.set(
+        'TeamMemberDescription',
+        teamForm.value.TeamMemberDescription
+      );
       formData.set('TeamMemberCompany', teamForm.value.TeamMemberCompany);
 
       await this._teamMemberService.insertAsync(formData);
@@ -99,7 +101,10 @@ export class TeamMembersAddComponent implements OnInit {
       formData.set('TeamMemberTitle', teamForm.value.TeamMemberTitle);
       formData.set('TeamMemberGithub', teamForm.value.TeamMemberGithub);
       formData.set('TeamMemberLinkedin', teamForm.value.TeamMemberLinkedin);
-      formData.set('TeamMemberDescription', teamForm.value.TeamMemberDescription);
+      formData.set(
+        'TeamMemberDescription',
+        teamForm.value.TeamMemberDescription
+      );
       formData.set('TeamMemberCompany', teamForm.value.TeamMemberCompany);
       formData.set(
         'TeamMemberID',

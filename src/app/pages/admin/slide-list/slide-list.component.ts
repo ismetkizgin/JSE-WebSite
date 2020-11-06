@@ -4,7 +4,7 @@ import { SlideService } from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogWindowComponent } from '../../../components';
+import { DialogWindowComponent, AddSliderComponent } from '../../../components';
 
 @Component({
   selector: 'app-slide-list',
@@ -65,6 +65,16 @@ export class SlideListComponent implements OnInit {
           this._slideService.errorNotification(error);
         }
       }
+    });
+  }
+
+  openSlideModal(slide = null) {
+    const diologRef = this._dialog.open(AddSliderComponent, {
+      width: '500px',
+      data: slide,
+    });
+    diologRef.afterClosed().subscribe((result: any) => {
+      if (result) this.ngOnInit();
     });
   }
 }

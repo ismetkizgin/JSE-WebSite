@@ -1,37 +1,36 @@
 import { Injectable } from '@angular/core';
 import { ApiFetchService } from '../api-fetch/api-fetch.service';
-import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProjectService {
-
+export class BlogService {
   constructor(
     private _apiFetchService: ApiFetchService,
     private _snackBar: MatSnackBar,
     private _translateService: TranslateService
-  ) { }
+  ) {}
 
-  async listAsync() {
-    return await this._apiFetchService.requestAsync('GET', 'project', null);
+  async listAsync(values = null) {
+    return await this._apiFetchService.requestAsync('GET', `blog`, values);
+  }
+
+  async findAsync(blogID) {
+    return await this._apiFetchService.requestAsync(
+      'GET',
+      `blog/${blogID}`,
+      null,
+      true
+    );
   }
 
   async deleteAsync(values) {
     return await this._apiFetchService.requestAsync(
       'DELETE',
-      'project',
+      'blog',
       values,
-      true
-    );
-  }
-
-  async findAsync(projectID) {
-    return await this._apiFetchService.requestAsync(
-      'GET',
-      `project/${projectID}`,
-      null,
       true
     );
   }
@@ -39,7 +38,7 @@ export class ProjectService {
   async insertAsync(values) {
     return await this._apiFetchService.requestAsync(
       'POST',
-      'project',
+      'blog',
       values,
       true
     );
@@ -48,7 +47,7 @@ export class ProjectService {
   async updateAsync(values) {
     return await this._apiFetchService.requestAsync(
       'PUT',
-      'project',
+      'blog',
       values,
       true
     );
@@ -64,17 +63,17 @@ export class ProjectService {
         break;
       case 409:
         this._translateService
-          .get('Such an Project is already registered in the system !')
+          .get('Such an Blog is already registered in the system !')
           .subscribe((value) => (errorMessage = value));
         break;
       case 417:
         this._translateService
-          .get('Please enter correct Project information !')
+          .get('Please enter correct Blog information !')
           .subscribe((value) => (errorMessage = value));
         break;
       case 404:
         this._translateService
-          .get('No Project record found in the system !')
+          .get('No Blog record found in the system !')
           .subscribe((value) => (errorMessage = value));
         break;
       default:
