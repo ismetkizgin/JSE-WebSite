@@ -1,3 +1,9 @@
+<div class="row">
+    <div class="col-md-4 col-sm-12 add-button">
+        <button type="button" (click)="openSlideModal()" class="btn btn-sm btn-outline-success"><i
+                class="fas fa-plus"></i> {{ 'Add Slide' | translate }}</button>
+    </div>
+</div>
 <div class="card">
     <div class="card-body table-responsive p-0">
         <table class="table table-hover text-nowrap">
@@ -15,7 +21,7 @@
                         <ng-container
                             *ngIf="slide.SlideLink != null && slide.SlideLink != ''; then success else danger">
                         </ng-container>
-                        <ng-template #success><a [href]="slide.SlideLink"><span class="badge badge-success">Routing
+                        <ng-template #success><a [href]="slide.SlideLink" target="_blank"><span class="badge badge-success">Routing
                                     Active</span></a></ng-template>
                         <ng-template #danger><span class="badge badge-danger">Routing Pasive</span></ng-template>
                     </td>
@@ -24,7 +30,7 @@
                             <mat-icon class="list-menu">more_vert</mat-icon>
                         </a>
                         <mat-menu #menu="matMenu">
-                            <a mat-menu-item>
+                            <a mat-menu-item  (click)="openSlideModal(slide)">
                                 <mat-icon>edit</mat-icon>
                                 <span>{{ 'Edit' | translate }}</span>
                             </a>
