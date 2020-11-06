@@ -14,9 +14,9 @@ import { FormsModule } from '@angular/forms';
 import {
   ClientLayoutComponent,
   ClientNavbarComponent,
-  ClientBannerComponent
+  ClientBannerComponent,
 } from '../../components/layouts/client';
-import { HomepageComponent, BlogsComponent } from './';
+import { HomepageComponent, ProjectsComponent, BlogsComponent } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,7 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomepageComponent,
     ClientNavbarComponent,
     ClientBannerComponent,
-    BlogsComponent
+    BlogsComponent,
+    ProjectsComponent,
   ],
   imports: [
     CommonModule,
@@ -51,4 +52,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [],
 })
-export class ClientLayoutModule { }
+export class ClientLayoutModule {}
