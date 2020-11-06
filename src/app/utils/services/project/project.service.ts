@@ -14,6 +14,19 @@ export class ProjectService {
     private _translateService: TranslateService
   ) { }
 
+  async listAsync() {
+    return await this._apiFetchService.requestAsync('GET', 'project', null);
+  }
+
+  async deleteAsync(values) {
+    return await this._apiFetchService.requestAsync(
+      'DELETE',
+      'project',
+      values,
+      true
+    );
+  }
+
   async findAsync(projectID) {
     return await this._apiFetchService.requestAsync(
       'GET',
