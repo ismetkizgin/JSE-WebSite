@@ -11,12 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import {
   ClientLayoutComponent,
   ClientNavbarComponent,
   ClientBannerComponent,
   SliderComponent,
-  ClientFooterComponent
+  ClientFooterComponent,
 } from '../../components/';
 import {
   HomepageComponent,
@@ -44,16 +45,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     TeamMembersComponent,
     ProjectsComponent,
     BlogsComponent,
-    ClientFooterComponent
+    ClientFooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     MatInputModule,
+    RecaptchaModule,
     MatFormFieldModule,
     MatIconModule,
     MatMenuModule,
+    RecaptchaFormsModule,
     NgSearchFilterModule,
     NgxPaginationModule,
     HttpClientModule,

@@ -58,8 +58,11 @@
             </mat-form-field>
         </div>
 
-        <ngx-recaptcha2 #captchaElem (success)="handleSuccess($event)"
-            siteKey="6Lc_SeAZAAAAAJh45vQbhZe4Cq1hP-PtGouitkzt"></ngx-recaptcha2>
+        <div class="form-group">
+            <re-captcha [siteKey]="recaptchaSiteKey" name="recaptcha" [(ngModel)]="_model.recaptcha" #recaptcha
+                required>
+            </re-captcha>
+        </div>
 
         <div class="container-contact100-form-btn">
             <button class="contact100-form-btn">

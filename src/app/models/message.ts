@@ -4,4 +4,5 @@ export class Message{
     SenderEmail: string;
     Message: string;
     SenderPhone: string;
+    recaptcha:string;
 }
