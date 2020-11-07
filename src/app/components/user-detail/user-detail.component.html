@@ -1,0 +1,41 @@
+<div ma-dialog-title class="institution-dialog__header">
+    <div class="modal-header">
+        <h2>{{ 'User Information' | translate}}</h2>
+        <a [mat-dialog-close]="false" class="close-icon">
+            <mat-icon>close</mat-icon>
+        </a>
+    </div>
+</div>
+
+<mat-dialog-content class="mat-typography institution-dialog__content">
+    <div class="card border-top border-info p-3">
+            <div class="form-group mt-2">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'User First Name' | translate }}</mat-label>
+                    <input matInput type="text" name="UserFirstName" #UserFirstName="ngModel"
+                        [(ngModel)]="_model.UserFirstName" disabled>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'User Last Name' | translate }}</mat-label>
+                    <input matInput type="text" name="UserLastName" #UserLastName="ngModel"
+                        [(ngModel)]="_model.UserLastName" disabled>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'User Email Address' | translate }}</mat-label>
+                    <input matInput type="text" name="UserEmail" #UserEmail="ngModel"
+                        [(ngModel)]="_model.UserEmail" disabled>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'User Type Name' | translate }}</mat-label>
+                    <input matInput type="text" name="UserTypeName" #UserTypeName="ngModel"
+                        [(ngModel)]="_model.UserTypeName" disabled>
+                </mat-form-field>
+            </div>
+    </div>
+</mat-dialog-content>

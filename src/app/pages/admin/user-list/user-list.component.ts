@@ -4,7 +4,7 @@ import { UserService } from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogWindowComponent } from '../../../components';
+import { DialogWindowComponent, UserDetailComponent } from '../../../components';
 
 @Component({
   selector: 'app-user-list',
@@ -32,6 +32,14 @@ export class UserListComponent implements OnInit {
     } catch (error) {
       this._userService.errorNotification(error);
     }
+  }
+  examineOpenDialog(UserID){
+    const diologRef = this._dialog.open(UserDetailComponent, {
+      width: '500px',
+      data: this.users.find(
+        (user) => user.UserID == UserID
+      ),
+    });
   }
 
   async userDelete(UserID) {
