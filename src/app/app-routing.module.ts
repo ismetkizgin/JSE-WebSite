@@ -112,7 +112,7 @@ const routes: Routes = [
         path: 'users',
         component: UserListComponent,
         data: {
-          title: 'User Add',
+          title: 'User List',
           icon: 'fa fa-2x fa-user',
           authorize: [Roles.Root, Roles.Administrator],
         },
