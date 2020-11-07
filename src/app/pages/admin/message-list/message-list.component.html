@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-3 col-sm-12 ml-auto ">
+        <mat-form-field>
+            <mat-label>{{ 'Search' | translate }}</mat-label>
+            <input matInput type="text" [(ngModel)]="searchText"
+                placeholder="{{ 'Enter Words for Search' | translate }}" name="SearchText">
+            <a type="button" matSuffix [attr.aria-label]="'Search'">
+                <mat-icon>search</mat-icon>
+            </a>
+        </mat-form-field>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap table-striped">
+            <thead>
+                <tr>
+                    <th>{{ 'Message ID' | translate }}</th>
+                    <th>{{ 'Sender Name' | translate }}</th>
+                    <th>{{ 'Message Subject' | translate }}</th>
+                    <th>{{ 'Read State' | translate }}</th>
+                    <th>{{ 'Created Date' | translate }}</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let message of messages | filter:searchText | paginate: paginationConfig">
+                    <td>{{ message.MessageID }}</td>
+                    <td>{{ message.SenderName }}</td>
+                    <td>{{ message.MessageSubject }}</td>
+                    <ng-container [ngSwitch]="message.ReadState">
+                        <td *ngSwitchCase="0"><span class="badge badge-warning text-dark">{{ 'Not Read' | translate }}</span></td>
+                        <td *ngSwitchCase="1"><span class="badge badge-success text-dark">{{ 'Read' | translate }}</span></td>
+                    </ng-container>
+                    <td>{{ message.CreatedDate | date:'M/dd/yyyy, HH:mm':'+3'}}</td>
+                    <td class="list-button text-right">
+                        <a mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon class="list-menu">more_vert</mat-icon>
+                        </a>
+                        <mat-menu #menu="matMenu">
+                            <a mat-menu-item (click)="examineOpenDialog( message.MessageID)">
+                                <mat-icon>remove_red_eye</mat-icon>
+                                <span>{{ 'Examine' | translate }}</span>
+                            </a>
+                            <a mat-menu-item (click)="messageDelete( message.MessageID)">
+                                <mat-icon>delete</mat-icon>
+                                <span>{{ 'Delete' | translate }}</span>
+                            </a>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-pagination [config]="paginationConfig"></app-pagination>

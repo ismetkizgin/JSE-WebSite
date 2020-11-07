@@ -14,7 +14,7 @@ export class MessageService {
   ) {}
 
   async listAsync() {
-    return await this._apiFetchService.requestAsync('GET', 'message', null);
+    return await this._apiFetchService.requestAsync('GET', 'message', null,true);
   }
 
   async deleteAsync(values) {
