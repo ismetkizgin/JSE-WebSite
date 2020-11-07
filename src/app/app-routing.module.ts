@@ -152,7 +152,7 @@ const routes: Routes = [
         },
       },
       {
-        path: 'project/update/:ProjectID',
+        path: 'project/edit/:ProjectID',
         component: ProjectAddComponent,
         data: {
           title: 'Project Update',
