@@ -26,6 +26,7 @@ import {
   AddSliderComponent,
   DialogWindowComponent,
   PaginationComponent,
+  BlogCardComponent
 } from '../../components/';
 import {
   DashboardComponent,
@@ -40,6 +41,7 @@ import {
   ProjectListComponent,
   BlogAddComponent,
   BlogListComponent,
+
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -71,6 +73,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectListComponent,
     BlogAddComponent,
     BlogListComponent,
+    BlogCardComponent
   ],
   imports: [
     CommonModule,
