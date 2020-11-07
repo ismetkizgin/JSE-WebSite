@@ -88,7 +88,7 @@ const routes: Routes = [
         component: DashboardComponent,
         data: {
           title: 'Dashboard',
-          icon: 'fa fa-2x fa-home',
+          icon: 'fa fa-2x fa-file-archive'
         },
       },
       {
@@ -96,7 +96,7 @@ const routes: Routes = [
         component: UserAddComponent,
         data: {
           title: 'User Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-user-plus',
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
@@ -105,7 +105,7 @@ const routes: Routes = [
         component: UserAddComponent,
         data: {
           title: 'User Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-user-tag',
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
@@ -114,7 +114,7 @@ const routes: Routes = [
         component: UserListComponent,
         data: {
           title: 'User List',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-adress-book',
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
@@ -131,7 +131,7 @@ const routes: Routes = [
         component: BlogMenuListComponent,
         data: {
           title: 'User Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-caret-square-down',
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
@@ -140,7 +140,7 @@ const routes: Routes = [
         component: SlideListComponent,
         data: {
           title: 'User Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-sliders-h',
         },
       },
       {
@@ -148,7 +148,7 @@ const routes: Routes = [
         component: ProjectAddComponent,
         data: {
           title: 'Project Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-globe',
         },
       },
       {
@@ -156,7 +156,7 @@ const routes: Routes = [
         component: ProjectAddComponent,
         data: {
           title: 'Project Update',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-pen-square',
         },
       },
       {
@@ -164,7 +164,7 @@ const routes: Routes = [
         component: BlogAddComponent,
         data: {
           title: 'Blog Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-plus-square',
         },
       },
       {
@@ -172,7 +172,7 @@ const routes: Routes = [
         component: BlogAddComponent,
         data: {
           title: 'Project Update',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-id-card',
         },
       },
       {
@@ -180,7 +180,7 @@ const routes: Routes = [
         component: BlogListComponent,
         data: {
           title: 'Blog List',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-list',
         },
       },
       {
@@ -188,7 +188,7 @@ const routes: Routes = [
         component: ProjectListComponent,
         data: {
           title: 'Project Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-hive',
         },
       },
       {
@@ -196,7 +196,7 @@ const routes: Routes = [
         component: TeamMemberListComponent,
         data: {
           title: 'Team Member List',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-list',
         },
       },
       {
@@ -204,7 +204,7 @@ const routes: Routes = [
         component: TeamMembersAddComponent,
         data: {
           title: 'Team Member Add',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-calendar-plus',
         },
       },
       {
@@ -212,7 +212,7 @@ const routes: Routes = [
         component: TeamMembersAddComponent,
         data: {
           title: 'Team Member Update',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-map-pin',
         },
       },
       {
