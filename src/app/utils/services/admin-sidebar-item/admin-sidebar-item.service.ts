@@ -36,7 +36,7 @@ export class AdminSidebarItemService {
     },
     {
       title: 'Blog Transactions',
-      icon: 'fa fa-building',
+      icon: 'fa fa-exchange-alt',
       linkActive: ['/admin/blogs', '/admin/blog/add', '/admin/blog-menus'],
       submenuShowHide: this.getChildUrlActiveState([
         'blogs',
@@ -46,7 +46,7 @@ export class AdminSidebarItemService {
       submenu: [
         {
           title: 'Blog List',
-          icon: 'fa fa-map',
+          icon: 'fa fa-list',
           link: '/admin/blogs',
         },
         {
@@ -56,7 +56,7 @@ export class AdminSidebarItemService {
         },
         {
           title: 'Blog Menu List',
-          icon: 'fa fa-plus-square',
+          icon: 'fa fa-ellipsis-v',
           link: '/admin/blog-menus',
           authorize: [Roles.Root, Roles.Administrator],
         },
@@ -64,13 +64,13 @@ export class AdminSidebarItemService {
     },
     {
       title: 'Project Transactions',
-      icon: 'fa fa-building',
+      icon: 'fa fa-globe',
       linkActive: ['/admin/project/add', '/admin/projects'],
       submenuShowHide: this.getChildUrlActiveState(['project', 'projects']),
       submenu: [
         {
           title: 'Project List',
-          icon: 'fa fa-map',
+          icon: 'fa fa-list',
           link: '/admin/projects',
         },
         {
@@ -82,7 +82,7 @@ export class AdminSidebarItemService {
     },
     {
       title: 'Team Transactions',
-      icon: 'fa fa-building',
+      icon: 'fa fa-users',
       linkActive: ['/admin/team-member/add', '/admin/team-members'],
       submenuShowHide: this.getChildUrlActiveState([
         'team-members',
@@ -91,7 +91,7 @@ export class AdminSidebarItemService {
       submenu: [
         {
           title: 'Team Member List',
-          icon: 'fa fa-map',
+          icon: 'fa fa-list',
           link: '/admin/team-members',
         },
         {
@@ -103,8 +103,14 @@ export class AdminSidebarItemService {
     },
     {
       title: 'Slide List',
-      icon: 'fa fa-map',
+      icon: 'fa fa-window-restore',
       link: '/admin/slides',
+    },
+    {
+      title: 'Message List',
+      icon: 'fa fa-inbox',
+      link: '/admin/messages',
+      authorize: [Roles.Root, Roles.Administrator],
     },
   ];
 

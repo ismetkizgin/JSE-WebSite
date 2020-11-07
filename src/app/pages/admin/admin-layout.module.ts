@@ -23,10 +23,10 @@ import {
   AdminLayoutComponent,
   PasswordControlWindowComponent,
   ChangePasswordComponent,
+  UserDetailComponent,
   AddSliderComponent,
   DialogWindowComponent,
   PaginationComponent,
-  BlogCardComponent
 } from '../../components/';
 import {
   DashboardComponent,
@@ -41,7 +41,7 @@ import {
   ProjectListComponent,
   BlogAddComponent,
   BlogListComponent,
-
+  MessageListComponent
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -62,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserAddComponent,
     PasswordControlWindowComponent,
     AddBlogMenuComponent,
+    UserDetailComponent,
     DialogWindowComponent,
     BlogMenuListComponent,
     UserListComponent,
@@ -73,7 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectListComponent,
     BlogAddComponent,
     BlogListComponent,
-    BlogCardComponent
+    MessageListComponent,
   ],
   imports: [
     CommonModule,

@@ -7,3 +7,4 @@ export * from './change-password/change-password.component';
 export * from './pagination/pagination.component';
 export * from './add-slider/add-slider.component';
 export * from './blog-card/blog-card.component'
+export * from './user-detail/user-detail.component';
