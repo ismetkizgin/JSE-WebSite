@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangePasswordComponent } from '../../../';
+import { ChangePasswordComponent } from '../../../change-password/change-password.component';
 import { AuthService } from '../../../../utils';
 import { MatDialog } from '@angular/material/dialog';
 
