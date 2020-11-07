@@ -10,7 +10,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member Name' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Member Name' | translate }}"
+                                <input matInput type="text" placeholder="{{ 'Enter Member Name' | translate }}"
                                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberName" #TeamMemberName="ngModel"
                                     [(ngModel)]="_model.TeamMemberName" required>
                                 <mat-error *ngIf="TeamMemberName.invalid&&TeamMemberName.touched">
@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member Company' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Member Company' | translate }}"
+                                <input matInput type="text" placeholder="{{ 'Enter Member Company' | translate }}"
                                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberCompany" #TeamMemberCompany="ngModel"
                                     [(ngModel)]="_model.TeamMemberCompany" required>
                                 <mat-error *ngIf="TeamMemberCompany.invalid&&TeamMemberCompany.touched">
@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member Title' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Member Title' | translate }}"
+                                <input matInput type="text" placeholder="{{ 'Enter Member Title' | translate }}"
                                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberTitle" #TeamMemberTitle="ngModel"
                                     [(ngModel)]="_model.TeamMemberTitle" required>
                                 <mat-error *ngIf="TeamMemberTitle.invalid&&TeamMemberTitle.touched">
@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member GitHub' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Member GitHub' | translate }}"
+                                <input matInput type="text" placeholder="{{ 'Enter Member GitHub' | translate }}"
                                      name="TeamMemberGithub" #TeamMemberGithub="ngModel"
                                     [(ngModel)]="_model.TeamMemberGithub" required>
                                 <mat-error *ngIf="TeamMemberGithub.invalid&&TeamMemberGithub.touched">
@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member LinkedIn' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Member LinkedIn' | translate }}"
+                                <input matInput type="text" placeholder="{{ 'Enter Member LinkedIn' | translate }}"
                                     name="TeamMemberLinkedin" #TeamMemberLinkedin="ngModel"
                                     [(ngModel)]="_model.TeamMemberLinkedin" required>
                                 <mat-error *ngIf="TeamMemberLinkedin.invalid&&TeamMemberLinkedin.touched">
@@ -83,7 +83,7 @@
                         <div class="form-group">
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Member Description' | translate }}</mat-label>
-                                <textarea matInput type="text" placeholder="{{ 'Member Description' | translate }}"
+                                <textarea matInput type="text" placeholder="{{ 'Enter Member Description' | translate }}"
                                 name="TeamMemberDescription" #TeamMemberDescription="ngModel"
                                 [(ngModel)]="_model.TeamMemberDescription" required></textarea>
                                 <mat-error *ngIf="TeamMemberDescription.invalid&&TeamMemberDescription.touched">
@@ -97,6 +97,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </form>
