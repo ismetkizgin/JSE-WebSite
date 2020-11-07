@@ -7,3 +7,4 @@ export * from './blog-menu';
 export * from './project';
 export * from './team-member';
 export * from './blog';
+export * from './message';

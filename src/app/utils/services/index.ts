@@ -10,3 +10,4 @@ export * from './slide/slide.service';
 export * from './team-member/team-member.service';
 export * from './blog/blog.service';
 export * from './team-member/team-member.service'
+export * from './message/message.service';
