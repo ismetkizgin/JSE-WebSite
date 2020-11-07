@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../../utils/services';
+import { Blog } from '../../models';
 
 @Component({
   selector: 'app-blog-card',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _blogService: BlogService,
+  ) { }
 
-  ngOnInit(): void {
-  }
+  blogs:Blog=new Blog();
+    async ngOnInit() {
+      try {
+        this.blogs = <Blog>await this._blogService.listAsync();
+      } catch (error) {
+        this._blogService.errorNotification(error);
+      }
+    }
 
 }
