@@ -24,6 +24,7 @@ import {
   BlogAddComponent,
   ContactComponent,
   BlogListComponent,
+  MessageListComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -214,6 +215,14 @@ const routes: Routes = [
           icon: 'fa fa-2x fa-user',
         },
       },
+      {
+        path: 'messages',
+        component: MessageListComponent,
+        data: {
+          title: 'Message List',
+          icon: 'fa fa-2x fa-user',
+        },
+      }
     ],
   },
   {

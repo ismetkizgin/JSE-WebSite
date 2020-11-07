@@ -40,6 +40,8 @@ import {
   ProjectListComponent,
   BlogAddComponent,
   BlogListComponent,
+  MessageListComponent
+  
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -71,6 +73,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectListComponent,
     BlogAddComponent,
     BlogListComponent,
+    MessageListComponent,
   ],
   imports: [
     CommonModule,
