@@ -106,6 +106,12 @@ export class AdminSidebarItemService {
       icon: 'fa fa-map',
       link: '/admin/slides',
     },
+    {
+      title: 'Message List',
+      icon: 'fa fa-map',
+      link: '/admin/messages',
+      authorize: [Roles.Root, Roles.Administrator],
+    },
   ];
 
   getChildUrlActiveState(path: string[]) {

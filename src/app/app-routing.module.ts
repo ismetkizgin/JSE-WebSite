@@ -24,7 +24,7 @@ import {
   BlogAddComponent,
   ContactComponent,
   BlogListComponent,
-  MessageListComponent
+  MessageListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -74,7 +74,7 @@ const routes: Routes = [
         data: {
           title: 'Cantact',
         },
-      }
+      },
     ],
   },
   {
@@ -88,7 +88,7 @@ const routes: Routes = [
         component: DashboardComponent,
         data: {
           title: 'Dashboard',
-          icon: 'fa fa-2x fa-home'
+          icon: 'fa fa-2x fa-home',
         },
       },
       {
@@ -221,8 +221,9 @@ const routes: Routes = [
         data: {
           title: 'Message List',
           icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
-      }
+      },
     ],
   },
   {
