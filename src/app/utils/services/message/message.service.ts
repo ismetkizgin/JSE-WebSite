@@ -36,12 +36,7 @@ export class MessageService {
   }
 
   async insertAsync(values) {
-    return await this._apiFetchService.requestAsync(
-      'POST',
-      'message',
-      values,
-      true
-    );
+    return await this._apiFetchService.requestAsync('POST', 'message', values);
   }
 
   errorNotification(error) {

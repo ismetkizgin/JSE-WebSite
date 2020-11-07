@@ -7,4 +7,5 @@ export class Message {
     SenderPhone: string;
     ReadState: number;
     CreatedDate: Date;
+    recaptcha:string;
 }
