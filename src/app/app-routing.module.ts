@@ -48,10 +48,10 @@ const routes: Routes = [
         },
       },
       {
-        path: 'blogs',
+        path: ':BlogMenuName/:BlogMenuID',
         component: BlogsComponent,
         data: {
-          title: 'Blogs',
+          title: 'Blog',
         },
       },
       {

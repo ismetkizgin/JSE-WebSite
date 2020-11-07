@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../../../models';
 import { BlogService } from '../../../utils';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blogs',
@@ -8,7 +9,10 @@ import { BlogService } from '../../../utils';
   styleUrls: ['./blogs.component.scss'],
 })
 export class BlogsComponent implements OnInit {
-  constructor(private _blogService: BlogService) {}
+  constructor(
+    private _blogService: BlogService,
+    private _activatedRoute: ActivatedRoute
+  ) {}
 
   searchText: String;
   paginationConfig = {
@@ -20,7 +24,12 @@ export class BlogsComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      this.blogs = <Array<Blog>>await this._blogService.listAsync();
+      const BlogMenuID = this._activatedRoute.snapshot.paramMap.get(
+        'BlogMenuID'
+      );
+      this.blogs = <Array<Blog>>(
+        await this._blogService.listAsync({ BlogMenuID })
+      );
     } catch (error) {
       this._blogService.errorNotification(error);
     }
