@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-4 col-sm-12 add-button">
+        <button type="button" (click)="openSlideModal()" class="btn btn-sm btn-outline-success"><i
+                class="fas fa-plus"></i> {{ 'Add Slide' | translate }}</button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap table-striped">
+            <thead>
+                <tr>
+                    <th>{{ 'Slide Image' | translate }}</th>
+                    <th>{{ 'Slide Link' | translate }}</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let slide of slides | paginate: paginationConfig">
+                    <td><img class="slide__image" [src]="slide.SlideImagePath" /></td>
+                    <td>
+                        <ng-container
+                            *ngIf="slide.SlideLink != null && slide.SlideLink != ''; then success else danger">
+                        </ng-container>
+                        <ng-template #success><a [href]="slide.SlideLink" target="_blank"><span class="badge badge-success">Routing
+                                    Active</span></a></ng-template>
+                        <ng-template #danger><span class="badge badge-danger">Routing Pasive</span></ng-template>
+                    </td>
+                    <td class="list-button text-right">
+                        <a mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon class="list-menu">more_vert</mat-icon>
+                        </a>
+                        <mat-menu #menu="matMenu">
+                            <a mat-menu-item  (click)="openSlideModal(slide)">
+                                <mat-icon>edit</mat-icon>
+                                <span>{{ 'Edit' | translate }}</span>
+                            </a>
+                            <a mat-menu-item (click)="slideDelete(slide.SlideID)">
+                                <mat-icon>delete</mat-icon>
+                                <span>{{ 'Delete' | translate }}</span>
+                            </a>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-pagination [config]="paginationConfig"></app-pagination>

@@ -1,0 +1,36 @@
+<form #projectForm='ngForm' (ngSubmit)="onSave(projectForm)">
+  <div class="row">
+    <div class="col-12 card card-outline card-info">
+      <div class="card-header">
+        <h3 class="card-title">{{ 'Project Informations' | translate }}</h3>
+      </div>
+      <div class="card-body pad">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'Project Name' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Project Name' | translate }}"
+                       pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="ProjectName" #ProjectName="ngModel"
+                       [(ngModel)]="_model.ProjectName" required>
+                <mat-error *ngIf="ProjectName.invalid&&ProjectName.touched">
+                  {{ 'Project Name field must be filled' | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div
+            class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <ckeditor [(ngModel)]="_model.ProjectDescription" #ProjectDescription="ngModel" id="ProjectDescription"
+                        name="ProjectDescription" [data]="_model.ProjectDescription" [config]="{ language:lang }">
+              </ckeditor>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info w-100">{{'Save'| translate}}</button>
+      </div>
+    </div>
+  </div>
+</form>

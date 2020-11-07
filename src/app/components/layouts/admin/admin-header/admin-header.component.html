@@ -9,19 +9,6 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="flag-icon flag-icon-{{ lang }} lang"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right p-0">
-                <a (click)="setLang('tr')" class="dropdown-item lang__selection" [ngClass]="{'active': lang=='tr'}">
-                    <i class="flag-icon flag-icon-tr mr-2"></i> Türkçe
-                </a>
-                <a (click)="setLang('en')" class="dropdown-item lang__selection" [ngClass]="{'active': lang=='us'}">
-                    <i class="flag-icon flag-icon-us mr-2"></i> English
-                </a>
-            </div>
-        </li>
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                 <img src="assets/images/default/user.png" class="user-image img-circle elevation-2" alt="User Image">
@@ -35,6 +22,13 @@
                         {{ userInformation.UserFirstName }} {{ userInformation.UserLastName }}
                         <small>{{ userInformation.UserStatusName | translate }}</small>
                     </p>
+                </li>
+                <li class="user-body p-1">
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <a class="btn" (click)="openPasswordChangeWindow()">{{ 'Change Password' | translate }}</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="user-footer">
                     <a href="#" class="btn btn-default btn-flat">Profile</a>

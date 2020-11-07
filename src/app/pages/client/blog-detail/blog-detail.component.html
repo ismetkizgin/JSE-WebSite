@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <h1>{{blog.BlogTitle}}</h1>
+    <p><small>{{ 'By' | translate }}<em>
+          {{blog.UserNameSurname}}</em> | {{ 'Date' | translate }}: <em>
+          {{blog.BlogCreatedDate | date:'M/dd/yyyy, HH:mm':'+3'}}</em></small></p>
+  </div>
+</header>
+<div class="container blog pt-4">
+  <div class="row">
+    <div class="col-12">
+      <img src={{blog.BlogImagePath}} class="blog__images" />
+    </div>
+    <div class="col-12" [innerHtml]="blog.BlogContent">
+    </div>
+  </div>
+</div>

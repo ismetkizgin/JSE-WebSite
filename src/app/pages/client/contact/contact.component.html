@@ -1,0 +1,75 @@
+<div class="wrap-contact100">
+    <form class="contact100-form validate-form" #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+        <span class="contact100-form-title">
+            {{ 'Send Us A Message' | translate }}
+        </span>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Full Name' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter your name' | translate }}"
+                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="SenderName" #SenderName="ngModel"
+                    [(ngModel)]="_model.SenderName" required>
+                <mat-error *ngIf="SenderName.invalid&&SenderName.touched">
+                    {{ 'Full name field must be filled' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Subject' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter your subject' | translate }}"
+                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="MessageSubject" #MessageSubject="ngModel"
+                    [(ngModel)]="_model.MessageSubject" required>
+                <mat-error *ngIf="MessageSubject.invalid&&MessageSubject.touched">
+                    {{ 'Subject field must be filled' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'E-mail Address' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter your email' | translate }}"
+                    pattern="^[a-z0-9.%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" name="SenderEmail" #SenderEmail="ngModel"
+                    [(ngModel)]="_model.SenderEmail" required>
+                <mat-error *ngIf="SenderEmail.invalid&&SenderEmail.touched">
+                    {{ 'E-mail address field must be filled' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Phone' | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter your phone' | translate }}" pattern="[0-9]{11}"
+                    maxlength="11" minlength="9" name="SenderPhone" #SenderPhone="ngModel"
+                    [(ngModel)]="_model.SenderPhone">
+                <mat-error *ngIf="SenderPhone.invalid&&SenderPhone.touched">
+                    {{ 'Enter the phone number field correctly' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'Message' | translate }}</mat-label>
+                <textarea matInput placeholder="{{ 'Type your message here' | translate }}"
+                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="Message" #Message="ngModel" [(ngModel)]="_model.Message"
+                    required></textarea>
+                <mat-error *ngIf="Message.invalid&&Message.touched">
+                    {{ 'Message field must be filled' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <re-captcha [siteKey]="recaptchaSiteKey" name="recaptcha" [(ngModel)]="_model.recaptcha" #recaptcha
+                required>
+            </re-captcha>
+        </div>
+
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+                {{ 'Send' | translate }}
+            </button>
+        </div>
+    </form>
+    <div class="contact100-more flex-col-c-m" style="background-image: url('../../../../assets/contact/bg-01.jpg')">
+    </div>
+</div>

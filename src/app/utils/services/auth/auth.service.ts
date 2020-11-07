@@ -189,7 +189,7 @@ export class AuthService {
 
   async passwordControl(values) {
     return await this._apiFetchService.requestAsync(
-      'PUT',
+      'POST',
       'password-control',
       values,
       true
