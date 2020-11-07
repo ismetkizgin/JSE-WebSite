@@ -4,6 +4,7 @@ import { Message } from '../../../models';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MessageService } from 'src/app/utils';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -16,13 +17,11 @@ export class ContactComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private _messageService: MessageService
   ) {}
-
   _model: Message = new Message();
-  recaptcha: any;
+  recaptchaSiteKey: string = environment.recaptchaSiteKey;
   ngOnInit(): void {}
 
   async onSubmit(messageForm: NgForm) {
-    console.log(this.recaptcha);
     console.log(messageForm.value);
     try {
       let notification: any = {
@@ -30,13 +29,14 @@ export class ContactComponent implements OnInit {
         panelClass: '',
       };
 
-      if (messageForm.valid) {
+      if (messageForm.valid && this._model.recaptcha) {
         this._translateService
           .get('Your message has been sent')
           .subscribe((value) => (notification.message = value));
         notification.panelClass = 'notification__success';
         if (!messageForm.value.SenderPhone)
           delete messageForm.value.SenderPhone;
+        delete messageForm.value.recaptcha;
         await this._messageService.insertAsync(messageForm.value);
         messageForm.resetForm();
       } else {
@@ -47,7 +47,7 @@ export class ContactComponent implements OnInit {
       }
 
       this._snackBar.open(notification.message, 'X', {
-        duration: 3000,
+        duration: 6000,
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: notification.panelClass,
@@ -56,9 +56,5 @@ export class ContactComponent implements OnInit {
       console.log(error);
       this._messageService.errorNotification(error);
     }
-  }
-
-  handleSuccess(e) {
-    this.recaptcha = e;
   }
 }

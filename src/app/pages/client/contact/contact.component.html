@@ -6,7 +6,7 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'Full Name' | translate }}</mat-label>
-                <input matInput type="text" placeholder="{{ 'Enter your name...' | translate }}"
+                <input matInput type="text" placeholder="{{ 'Enter your name' | translate }}"
                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="SenderName" #SenderName="ngModel"
                     [(ngModel)]="_model.SenderName" required>
                 <mat-error *ngIf="SenderName.invalid&&SenderName.touched">
@@ -17,7 +17,7 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'Subject' | translate }}</mat-label>
-                <input matInput type="text" placeholder="{{ 'Enter your subject...' | translate }}"
+                <input matInput type="text" placeholder="{{ 'Enter your subject' | translate }}"
                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="MessageSubject" #MessageSubject="ngModel"
                     [(ngModel)]="_model.MessageSubject" required>
                 <mat-error *ngIf="MessageSubject.invalid&&MessageSubject.touched">
@@ -28,7 +28,7 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'E-mail Address' | translate }}</mat-label>
-                <input matInput type="text" placeholder="{{ 'Enter your email...' | translate }}"
+                <input matInput type="text" placeholder="{{ 'Enter your email' | translate }}"
                     pattern="^[a-z0-9.%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" name="SenderEmail" #SenderEmail="ngModel"
                     [(ngModel)]="_model.SenderEmail" required>
                 <mat-error *ngIf="SenderEmail.invalid&&SenderEmail.touched">
@@ -39,7 +39,7 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'Phone' | translate }}</mat-label>
-                <input matInput type="text" placeholder="{{ 'Enter your phone...' | translate }}" pattern="[0-9]{11}"
+                <input matInput type="text" placeholder="{{ 'Enter your phone' | translate }}" pattern="[0-9]{11}"
                     maxlength="11" minlength="9" name="SenderPhone" #SenderPhone="ngModel"
                     [(ngModel)]="_model.SenderPhone">
                 <mat-error *ngIf="SenderPhone.invalid&&SenderPhone.touched">
@@ -50,7 +50,7 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'Message' | translate }}</mat-label>
-                <textarea matInput placeholder="{{ 'Type your message here...' | translate }}"
+                <textarea matInput placeholder="{{ 'Type your message here' | translate }}"
                     pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="Message" #Message="ngModel" [(ngModel)]="_model.Message"
                     required></textarea>
                 <mat-error *ngIf="Message.invalid&&Message.touched">
@@ -58,8 +58,11 @@
             </mat-form-field>
         </div>
 
-        <ngx-recaptcha2 #captchaElem (success)="handleSuccess($event)"
-            siteKey="6Lc_SeAZAAAAAJh45vQbhZe4Cq1hP-PtGouitkzt"></ngx-recaptcha2>
+        <div class="form-group">
+            <re-captcha [siteKey]="recaptchaSiteKey" name="recaptcha" [(ngModel)]="_model.recaptcha" #recaptcha
+                required>
+            </re-captcha>
+        </div>
 
         <div class="container-contact100-form-btn">
             <button class="contact100-form-btn">

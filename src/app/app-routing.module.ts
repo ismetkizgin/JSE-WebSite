@@ -24,6 +24,7 @@ import {
   BlogAddComponent,
   ContactComponent,
   BlogListComponent,
+  MessageListComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -73,7 +74,7 @@ const routes: Routes = [
         data: {
           title: 'Cantact',
         },
-      }
+      },
     ],
   },
   {
@@ -212,6 +213,15 @@ const routes: Routes = [
         data: {
           title: 'Team Member Update',
           icon: 'fa fa-2x fa-map-pin',
+        },
+      },
+      {
+        path: 'messages',
+        component: MessageListComponent,
+        data: {
+          title: 'Message List',
+          icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
     ],
