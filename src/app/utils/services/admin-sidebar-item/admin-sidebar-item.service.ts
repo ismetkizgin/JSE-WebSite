@@ -112,6 +112,13 @@ export class AdminSidebarItemService {
       link: '/admin/messages',
       authorize: [Roles.Root, Roles.Administrator],
     },
+    ,
+    {
+      title: 'Site Setting',
+      icon: 'fa fa-cogs',
+      link: '/admin/footer/edit',
+      authorize: [Roles.Root, Roles.Administrator],
+    }
   ];
 
   getChildUrlActiveState(path: string[]) {
