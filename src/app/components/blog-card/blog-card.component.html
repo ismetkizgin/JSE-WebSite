@@ -8,7 +8,9 @@
               <img class="img-fluid" src={{blog.BlogImagePath}} />
             </a>
             <div class="ribbon-wrapper">
-              <div class="ribbon bg-primary {{blog.BlogMenuName}}">{{blog.BlogMenuName}}</div>
+              <div class="ribbon bg-primary {{blog.BlogMenuName}}">
+                {{blog.BlogMenuName}}
+              </div>
             </div>
           </div>
           <div class="card__content">
@@ -24,7 +26,7 @@
             </span>
           </div>
           <div class="card__date">
-            <span>{{blog.BlogCreatedDate}}</span>
+            <span>{{blog.BlogCreatedDate | date: 'dd MMM yyyy' }}</span>
           </div>
         </div>
       </div>
