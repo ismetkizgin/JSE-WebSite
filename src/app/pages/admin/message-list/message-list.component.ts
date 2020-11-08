@@ -4,12 +4,15 @@ import { MessageService } from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogWindowComponent, MessageDetailComponent } from '../../../components';
+import {
+  DialogWindowComponent,
+  MessageDetailComponent,
+} from '../../../components';
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.scss']
+  styleUrls: ['./message-list.component.scss'],
 })
 export class MessageListComponent implements OnInit {
   messages: Array<Message>;
@@ -19,20 +22,24 @@ export class MessageListComponent implements OnInit {
     itemsPerPage: 10,
     currentPage: 1,
   };
-  
+
   constructor(
     private _messageService: MessageService,
     private _snackBar: MatSnackBar,
     private _translateService: TranslateService,
     private _dialog: MatDialog
-  ) { }
+  ) {}
 
-  examineOpenDialog(MessageID){
+  examineOpenDialog(MessageID) {
     const diologRef = this._dialog.open(MessageDetailComponent, {
       width: '500px',
-      data: this.messages.find(
+      data: this.messages.find((message) => message.MessageID == MessageID),
+    });
+
+    diologRef.afterClosed().subscribe((result: any) => {
+      this.messages.find(
         (message) => message.MessageID == MessageID
-      ),
+      ).ReadState = 1;
     });
   }
 
@@ -56,7 +63,9 @@ export class MessageListComponent implements OnInit {
         try {
           await this._messageService.deleteAsync({ MessageID });
           this.messages.splice(
-            this.messages.findIndex((message) => message.MessageID == MessageID),
+            this.messages.findIndex(
+              (message) => message.MessageID == MessageID
+            ),
             1
           );
           let notificationMessage: string;
@@ -76,5 +85,4 @@ export class MessageListComponent implements OnInit {
       }
     });
   }
-
 }
