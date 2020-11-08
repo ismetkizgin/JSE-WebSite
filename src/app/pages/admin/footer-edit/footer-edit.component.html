@@ -1,0 +1,92 @@
+<form #footerForm="ngForm" (ngSubmit)="onSave(footerForm)">
+  <div class="row">
+    <div class="col-12 card card-outline card-info">
+      <div class="card-header">
+        <h3 class="card-title">
+          {{ "Footer Informations" | translate }}
+        </h3>
+      </div>
+      <div class="card-body pad">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{
+                  "About We" | translate
+                }}</mat-label>
+                <textarea matInput type="text" placeholder="{{ 'Enter About We' | translate }}" name="AboutWe"
+                  #AboutWe="ngModel" [(ngModel)]="_model.AboutWe" required></textarea>
+                <mat-error *ngIf="
+                  AboutWe.invalid &&
+                  AboutWe.touched
+                  ">
+                  {{
+                    "About We field must be filled" | translate
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{
+                "Tweet" | translate
+              }}</mat-label>
+                <textarea matInput type="text" placeholder="{{ 'Enter Tweet' | translate }}" name="Tweet"
+                  #Tweet="ngModel" [(ngModel)]="_model.Tweet" required></textarea>
+                <mat-error *ngIf="
+                Tweet.invalid &&
+                Tweet.touched
+                ">
+                  {{
+                  "Tweet field must be filled" | translate
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Mail Address" | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Mail Address' | translate }}" name="MailAddress"
+                  #MailAddress="ngModel" [(ngModel)]="_model.MailAddress" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Linkedin" | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Linkedin' | translate }}" name="Linkedin"
+                  #Linkedin="ngModel" [(ngModel)]="_model.Linkedin" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Github" | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Github' | translate }}" name="Github"
+                  #Github="ngModel" [(ngModel)]="_model.Github" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Instagram" | translate }}</mat-label>
+                <input matInput type="text" placeholder="{{ 'Enter Instagram' | translate }}" name="Instagram"
+                  #Instagram="ngModel" [(ngModel)]="_model.Instagram" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info w-100">
+            {{ "Save" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
