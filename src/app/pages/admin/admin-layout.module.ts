@@ -42,7 +42,6 @@ import {
   BlogAddComponent,
   BlogListComponent,
   MessageListComponent
-  
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
