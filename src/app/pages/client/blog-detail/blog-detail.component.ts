@@ -18,7 +18,6 @@ export class BlogDetailComponent implements OnInit {
   async ngOnInit() {
     try {
       const BlogID = this._activatedRoute.snapshot.paramMap.get('BlogID');
-      console.log(BlogID)
       this.blog = <Blog>await this._blogService.findAsync(BlogID);
     } catch (error) {
       this._blogService.errorNotification(error);

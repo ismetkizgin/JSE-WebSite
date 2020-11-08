@@ -17,10 +17,10 @@ export class BlogService {
     return await this._apiFetchService.requestAsync('GET', `blog`, values);
   }
 
-  async findAsync(blogID) {
+  async findAsync(BlogID) {
     return await this._apiFetchService.requestAsync(
       'GET',
-      `blog/${blogID}`,
+      `blog/${BlogID}`,
       null
     );
   }
