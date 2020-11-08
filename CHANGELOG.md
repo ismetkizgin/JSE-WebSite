@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.5.0...v1.6.0) (2020-11-08)
+
+
+### Features
+
+* added blog card ([c0ec1ca](https://github.com/ismetkizgin/JSE-WebSite/commit/c0ec1caea34d27a359aa566e92670f50749290c1))
+* added language pack revised ([73d54fa](https://github.com/ismetkizgin/JSE-WebSite/commit/73d54fad5323231910642aa6aa0201ffa4ade081))
+* added message list page ([966ef1d](https://github.com/ismetkizgin/JSE-WebSite/commit/966ef1dbd1420f8705be752a479f9d6236c72a86))
+* added message service ([c4f13e1](https://github.com/ismetkizgin/JSE-WebSite/commit/c4f13e1794d26b9cd01af0ddab72ec11c4f29066))
+* added page icons ([6477974](https://github.com/ismetkizgin/JSE-WebSite/commit/6477974b9b071117b7660cd98c3972d803b54f9e))
+* added recaptcha for contact form ([1038b8c](https://github.com/ismetkizgin/JSE-WebSite/commit/1038b8c598b2d0877ce1dfe6611573371c285135))
+* added user detail window ([387fad6](https://github.com/ismetkizgin/JSE-WebSite/commit/387fad6959bfd27f72364a6c7345e3ceef7af3e6))
+* navbar blog menus added and redirected ([85078b6](https://github.com/ismetkizgin/JSE-WebSite/commit/85078b632cb007329422cf6f688e22c4e864b124))
+
+
+### Bug Fixes
+
+* fix for site title ([ef0d3df](https://github.com/ismetkizgin/JSE-WebSite/commit/ef0d3df109235c507c144756df2bb77c4cfb66cc))
+* table designdifferences in admin panel revised ([98bc024](https://github.com/ismetkizgin/JSE-WebSite/commit/98bc0249e27ed3e5116edb4aa5240583eb73ddba))
+
 ## [1.5.0](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.4.0...v1.5.0) (2020-11-06)
 
 
