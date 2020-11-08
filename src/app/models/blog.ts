@@ -9,4 +9,5 @@ export class Blog {
   BlogState: boolean;
   Image: File;
   BlogContent: string;
+  BlogMenuName: string;
 }
