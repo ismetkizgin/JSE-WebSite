@@ -25,6 +25,7 @@ import {
   ChangePasswordComponent,
   UserDetailComponent,
   AddSliderComponent,
+  MessageDetailComponent,
   DialogWindowComponent,
   PaginationComponent,
 } from '../../components/';
@@ -58,6 +59,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminHeaderComponent,
     AdminControlSidebarComponent,
     AdminSidebarComponent,
+    MessageDetailComponent,
     AddSliderComponent,
     LoginComponent,
     UserAddComponent,

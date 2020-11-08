@@ -1,5 +1,5 @@
 export * from './layouts';
-export * from  './dialog-window/dialog-window.component';
+export * from './dialog-window/dialog-window.component';
 export * from './password-control-window/password-control-window.component';
 export * from './slider/slider.component';
 export * from './add-blog-menu/add-blog-menu.component';
@@ -8,3 +8,4 @@ export * from './pagination/pagination.component';
 export * from './add-slider/add-slider.component';
 export * from './blog-card/blog-card.component'
 export * from './user-detail/user-detail.component';
+export * from './message-detail/message-detail.component';
