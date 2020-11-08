@@ -1,27 +1,31 @@
 <div class="container">
   <section id="blog_area" class="pt-5">
-    <div id="masonry">
-      <div class="card" style="max-height: 600px;" *ngFor="let blog of blogs">
-        <div class="card__img">
-          <a href="#">
-            <img class="img-fluid" src={{blog.BlogImagePath}}/>
-          </a>
-          <div class="ribbon-wrapper">
-            <div class="ribbon bg-primary">Blog</div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12 p-2 cards" *ngFor="let blog of blogs">
+        <div class="card cards">
+          <div class="card__img">
+            <a [routerLink]="['/blog-detail/',blog.BlogID]">
+              <img class="img-fluid" src={{blog.BlogImagePath}} />
+            </a>
+            <div class="ribbon-wrapper">
+              <div class="ribbon bg-primary {{blog.BlogMenuName}}">{{blog.BlogMenuName}}</div>
+            </div>
           </div>
-        </div>
-        <div class="card__content">
-          <h3 class="card__title">{{blog.BlogTitle}}</h3>
-          <p class="card__content-jcenter">
-            {{blog.BlogDescription}}
-          </p>
-          <h4>{{blog.UserNameSurname}}</h4>
-          <span>
-            <a href="#">Read more</a>
-          </span>
-        </div>
-        <div class="card__date">
-          <span>{{blog.BlogCreatedDate}}</span>
+          <div class="card__content">
+            <h3 class="card__title">{{blog.BlogTitle}}</h3>
+            <div class="div-content">
+              <p class="card__content-jcenter">
+                {{blog.BlogDescription}}
+              </p>
+            </div>
+            <h4>{{blog.UserNameSurname}}</h4>
+            <span>
+              <a [routerLink]="['/blog-detail/',blog.BlogID]">Read more</a>
+            </span>
+          </div>
+          <div class="card__date">
+            <span>{{blog.BlogCreatedDate}}</span>
+          </div>
         </div>
       </div>
     </div>
