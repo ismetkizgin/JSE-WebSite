@@ -1,0 +1,47 @@
+<div ma-dialog-title class="institution-dialog__header">
+    <div class="modal-header">
+        <h2>{{ 'Message Detail' | translate}}</h2>
+        <a [mat-dialog-close]="false" class="close-icon">
+            <mat-icon>close</mat-icon>
+        </a>
+    </div>
+</div>
+<mat-dialog-content class="mat-typography institution-dialog__content">
+    <div class="card border-top border-info p-3">
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{ 'Sender Name' | translate }}</mat-label>
+                <input matInput type="text" name="SenderName" #SenderName="ngModel" [(ngModel)]="_model.SenderName"
+                    disabled>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{ 'Sender Email' | translate }}</mat-label>
+                <input matInput type="text" name="SenderEmail" #SenderEmail="ngModel" [(ngModel)]="_model.SenderEmail"
+                    disabled>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{ 'Created Date' | translate }}</mat-label>
+                <input matInput type="text" name="CreatedDate" #CreatedDate="ngModel" [(ngModel)]="_model.CreatedDate"
+                    disabled>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{ 'Message Subject' | translate }}</mat-label>
+                <input matInput type="text" name="MessageSubject" #MessageSubject="ngModel"
+                    [(ngModel)]="_model.MessageSubject" disabled>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{ 'Message' | translate }}</mat-label>
+                <textarea rows="8" matInput type="text" name="Message" #Message="ngModel" [(ngModel)]="_model.Message"
+                    disabled></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+</mat-dialog-content>

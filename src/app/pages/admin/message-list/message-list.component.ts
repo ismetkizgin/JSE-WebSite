@@ -4,7 +4,7 @@ import { MessageService } from '../../../utils';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogWindowComponent } from '../../../components';
+import { DialogWindowComponent, MessageDetailComponent } from '../../../components';
 
 @Component({
   selector: 'app-message-list',
@@ -26,6 +26,15 @@ export class MessageListComponent implements OnInit {
     private _translateService: TranslateService,
     private _dialog: MatDialog
   ) { }
+
+  examineOpenDialog(MessageID){
+    const diologRef = this._dialog.open(MessageDetailComponent, {
+      width: '500px',
+      data: this.messages.find(
+        (message) => message.MessageID == MessageID
+      ),
+    });
+  }
 
   async ngOnInit() {
     try {
