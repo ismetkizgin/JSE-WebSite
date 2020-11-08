@@ -31,7 +31,10 @@
                             <mat-icon class="list-menu">more_vert</mat-icon>
                         </a>
                         <mat-menu #menu="matMenu">
-                          
+                            <a mat-menu-item [routerLink]="['/admin/team-member/edit/',teamMember.TeamMemberID]">
+                                <mat-icon>edit</mat-icon>
+                                <span>{{ 'Edit' | translate }}</span>
+                            </a>
                             <a mat-menu-item (click)="teamMemberDelete(teamMember.TeamMemberID)">
                                 <mat-icon>delete</mat-icon>
                                 <span>{{ 'Delete' | translate }}</span>
