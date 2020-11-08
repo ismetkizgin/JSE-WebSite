@@ -1,101 +1,194 @@
-<form #teamForm='ngForm' (ngSubmit)="onSave(teamForm)">
-    <div class="row">
-        <div class="col-12 card card-outline card-info">
-            <div class="card-header">
-                <h3 class="card-title">{{ 'Team Members Informations' | translate }}</h3>
+<form #teamForm="ngForm" (ngSubmit)="onSave(teamForm)">
+  <div class="row">
+    <div class="col-12 card card-outline card-info">
+      <div class="card-header">
+        <h3 class="card-title">
+          {{ "Team Members Informations" | translate }}
+        </h3>
+      </div>
+      <div class="card-body pad">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member Name" | translate }}</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member Name' | translate }}"
+                  pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$"
+                  name="TeamMemberName"
+                  #TeamMemberName="ngModel"
+                  [(ngModel)]="_model.TeamMemberName"
+                  required
+                />
+                <mat-error
+                  *ngIf="TeamMemberName.invalid && TeamMemberName.touched"
+                >
+                  {{
+                    "Team Member Name field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
             </div>
-            <div class="card-body pad">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member Name' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Enter Member Name' | translate }}"
-                                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberName" #TeamMemberName="ngModel"
-                                    [(ngModel)]="_model.TeamMemberName" required>
-                                <mat-error *ngIf="TeamMemberName.invalid&&TeamMemberName.touched">
-                                    {{ 'Member Name field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member Company' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Enter Member Company' | translate }}"
-                                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberCompany" #TeamMemberCompany="ngModel"
-                                    [(ngModel)]="_model.TeamMemberCompany" required>
-                                <mat-error *ngIf="TeamMemberCompany.invalid&&TeamMemberCompany.touched">
-                                    {{ 'Member Company field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member Title' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Enter Member Title' | translate }}"
-                                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="TeamMemberTitle" #TeamMemberTitle="ngModel"
-                                    [(ngModel)]="_model.TeamMemberTitle" required>
-                                <mat-error *ngIf="TeamMemberTitle.invalid&&TeamMemberTitle.touched">
-                                    {{ 'Member Title field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <input style="display: none" type="file" (change)="onFileSelect($event)" name="MemberImage"
-                                #MemberImage accept="image/*">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Team Member Image' | translate }}</mat-label>
-                                <input matInput disabled type="text" value="{{_model.Image?.name}}" #ImageName [required]="_router.isActive('admin/team-member/edit',false)">
-                                <a type="button" (click)="MemberImage.click()" matSuffix>
-                                    <mat-icon>backup</mat-icon>
-                                </a>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member GitHub' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Enter Member GitHub' | translate }}"
-                                     name="TeamMemberGithub" #TeamMemberGithub="ngModel"
-                                    [(ngModel)]="_model.TeamMemberGithub" required>
-                                <mat-error *ngIf="TeamMemberGithub.invalid&&TeamMemberGithub.touched">
-                                    {{ 'Member GitHub field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member LinkedIn' | translate }}</mat-label>
-                                <input matInput type="text" placeholder="{{ 'Enter Member LinkedIn' | translate }}"
-                                    name="TeamMemberLinkedin" #TeamMemberLinkedin="ngModel"
-                                    [(ngModel)]="_model.TeamMemberLinkedin" required>
-                                <mat-error *ngIf="TeamMemberLinkedin.invalid&&TeamMemberLinkedin.touched">
-                                    {{ 'Member LinkedIn field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <mat-form-field appearance="outline">
-                                <mat-label>{{ 'Member Description' | translate }}</mat-label>
-                                <textarea matInput type="text" placeholder="{{ 'Enter Member Description' | translate }}"
-                                name="TeamMemberDescription" #TeamMemberDescription="ngModel"
-                                [(ngModel)]="_model.TeamMemberDescription" required></textarea>
-                                <mat-error *ngIf="TeamMemberDescription.invalid&&TeamMemberDescription.touched">
-                                    {{ 'Member Description field must be filled' | translate }}</mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info w-100">{{'Save'| translate}}</button>
-                </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member Company" | translate }}</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member Company' | translate }}"
+                  pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$"
+                  name="TeamMemberCompany"
+                  #TeamMemberCompany="ngModel"
+                  [(ngModel)]="_model.TeamMemberCompany"
+                  required
+                />
+                <mat-error
+                  *ngIf="TeamMemberCompany.invalid && TeamMemberCompany.touched"
+                >
+                  {{
+                    "MTeam ember Company field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
             </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member Title" | translate }}</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member Title' | translate }}"
+                  pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$"
+                  name="TeamMemberTitle"
+                  #TeamMemberTitle="ngModel"
+                  [(ngModel)]="_model.TeamMemberTitle"
+                  required
+                />
+                <mat-error
+                  *ngIf="TeamMemberTitle.invalid && TeamMemberTitle.touched"
+                >
+                  {{
+                    "Team Member Title field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="form-group">
+              <input
+                style="display: none"
+                type="file"
+                (change)="onFileSelect($event)"
+                name="MemberImage"
+                #MemberImage
+                accept="image/*"
+              />
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member Image" | translate }}</mat-label>
+                <input
+                  matInput
+                  disabled
+                  type="text"
+                  value="{{ _model.Image?.name }}"
+                  #ImageName
+                  [required]="_router.isActive('admin/team-member/edit', false)"
+                />
+                <a type="button" (click)="MemberImage.click()" matSuffix>
+                  <mat-icon>backup</mat-icon>
+                </a>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member GitHub" | translate }}</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member GitHub' | translate }}"
+                  name="TeamMemberGithub"
+                  #TeamMemberGithub="ngModel"
+                  [(ngModel)]="_model.TeamMemberGithub"
+                  required
+                />
+                <mat-error
+                  *ngIf="TeamMemberGithub.invalid && TeamMemberGithub.touched"
+                >
+                  {{
+                    "Team Member GitHub field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ "Team Member LinkedIn" | translate }}</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member LinkedIn' | translate }}"
+                  name="TeamMemberLinkedin"
+                  #TeamMemberLinkedin="ngModel"
+                  [(ngModel)]="_model.TeamMemberLinkedin"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    TeamMemberLinkedin.invalid && TeamMemberLinkedin.touched
+                  "
+                >
+                  {{
+                    "Team Member LinkedIn field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>{{
+                  "Team Member Description" | translate
+                }}</mat-label>
+                <textarea
+                  matInput
+                  type="text"
+                  placeholder="{{ 'Enter Member Description' | translate }}"
+                  name="TeamMemberDescription"
+                  #TeamMemberDescription="ngModel"
+                  [(ngModel)]="_model.TeamMemberDescription"
+                  required
+                ></textarea>
+                <mat-error
+                  *ngIf="
+                    TeamMemberDescription.invalid &&
+                    TeamMemberDescription.touched
+                  "
+                >
+                  {{
+                    "Team Member Description field must be filled" | translate
+                  }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
         </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info w-100">
+            {{ "Save" | translate }}
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </form>
