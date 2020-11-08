@@ -11,4 +11,4 @@ export * from './project-list/project-list.component';
 export * from './blog-add/blog-add.component';
 export * from './blog-list/blog-list.component';
 export * from './message-list/message-list.component';
-
+export * from './footer-edit/footer-edit.component';

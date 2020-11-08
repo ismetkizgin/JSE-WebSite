@@ -25,6 +25,7 @@ import {
   ContactComponent,
   BlogListComponent,
   MessageListComponent,
+  FooterEditComponent
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -176,6 +177,16 @@ const routes: Routes = [
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
+      {
+        path: 'footer/edit',
+        component: FooterEditComponent,
+        data: {
+          title: 'Footer Edit',
+          icon: 'fa fa-2x fa-user',
+          authorize: [Roles.Root, Roles.Administrator],
+        },
+        
+      }
     ],
   },
   {

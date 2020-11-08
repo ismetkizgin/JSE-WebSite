@@ -41,7 +41,8 @@ import {
   ProjectListComponent,
   BlogAddComponent,
   BlogListComponent,
-  MessageListComponent
+  MessageListComponent,
+  FooterEditComponent
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -75,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BlogAddComponent,
     BlogListComponent,
     MessageListComponent,
+    FooterEditComponent,
   ],
   imports: [
     CommonModule,
