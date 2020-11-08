@@ -30,54 +30,6 @@ import { AuthGuard } from './utils/guards';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ClientLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: HomepageComponent,
-        data: {
-          title: 'Anasayfa',
-        },
-      },
-      {
-        path: 'projects',
-        component: ProjectsComponent,
-        data: {
-          title: 'Projects',
-        },
-      },
-      {
-        path: ':BlogMenuName/:BlogMenuID',
-        component: BlogsComponent,
-        data: {
-          title: 'Blog',
-        },
-      },
-      {
-        path: 'team-members',
-        component: TeamMembersComponent,
-        data: {
-          title: 'Team Members',
-        },
-      },
-      {
-        path: 'blog/detail/:BlogID',
-        component: BlogDetailComponent,
-        data: {
-          title: 'Blog Detail',
-        },
-      },
-      {
-        path: 'contact',
-        component: ContactComponent,
-        data: {
-          title: 'Cantact',
-        },
-      },
-    ],
-  },
-  {
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [AuthGuard],
@@ -88,7 +40,7 @@ const routes: Routes = [
         component: DashboardComponent,
         data: {
           title: 'Dashboard',
-          icon: 'fa fa-2x fa-file-archive'
+          icon: 'fa fa-2x fa-file-archive',
         },
       },
       {
@@ -222,6 +174,54 @@ const routes: Routes = [
           title: 'Message List',
           icon: 'fa fa-2x fa-user',
           authorize: [Roles.Root, Roles.Administrator],
+        },
+      },
+    ],
+  },
+  {
+    path: '',
+    component: ClientLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomepageComponent,
+        data: {
+          title: 'Anasayfa',
+        },
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent,
+        data: {
+          title: 'Projects',
+        },
+      },
+      {
+        path: 'team-members',
+        component: TeamMembersComponent,
+        data: {
+          title: 'Team Members',
+        },
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        data: {
+          title: 'Cantact',
+        },
+      },
+      {
+        path: ':BlogMenuName/detail/:BlogID',
+        component: BlogDetailComponent,
+        data: {
+          title: 'Blog Detail',
+        },
+      },
+      {
+        path: ':BlogMenuName/:BlogMenuID',
+        component: BlogsComponent,
+        data: {
+          title: 'Blog',
         },
       },
     ],

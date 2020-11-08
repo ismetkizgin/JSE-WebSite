@@ -30,7 +30,8 @@
         <div class="card-footer">
             <div class="row col-12"><span class="pb-0">{{ blog.UserNameSurname }} -
                     {{ blog.BlogCreatedDate | date:'M/dd/yyyy, HH:mm':'+3' }}</span>
-                <button class="btn btn-primary ml-auto">{{ 'Examine' | translate }}</button>
+                <a [routerLink]="['/'+ blog.BlogMenuName.toLocaleLowerCase() + '/detail/',blog.BlogID]"
+                    class="btn btn-primary ml-auto">{{ 'Examine' | translate }}</a>
             </div>
         </div>
     </div>

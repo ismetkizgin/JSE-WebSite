@@ -22,7 +22,7 @@
             </div>
             <h4>{{blog.UserNameSurname}}</h4>
             <span>
-              <a [routerLink]="['/blog-detail/',blog.BlogID]">Read more</a>
+              <a [routerLink]="['/'+ blog.BlogMenuName.toLocaleLowerCase() + '/detail/',blog.BlogID]">Read more</a>
             </span>
           </div>
           <div class="card__date">
