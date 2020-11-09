@@ -109,7 +109,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     MatDialogModule,
     NgSearchFilterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PaginationComponent
   ],
   providers: [],
 })
