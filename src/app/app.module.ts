@@ -16,6 +16,7 @@ import {
   SliderComponent,
   ClientFooterComponent,
   BlogCardComponent,
+  ErrorComponent
 } from './components/';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SliderComponent,
     ClientFooterComponent,
     BlogCardComponent,
+    ErrorComponent,
     routingComponents,
   ],
   imports: [

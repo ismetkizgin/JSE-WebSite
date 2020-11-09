@@ -26,6 +26,7 @@ import {
   BlogListComponent,
   MessageListComponent,
   FooterEditComponent,
+  ErrorPageComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -186,6 +187,11 @@ const routes: Routes = [
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
+      {
+        path: '**',
+        component: ErrorPageComponent,
+        data: { title: 'Error' },
+      },
     ],
   },
   {
@@ -234,6 +240,11 @@ const routes: Routes = [
           title: 'Blog',
         },
       },
+      {
+        path: '**',
+        component: ErrorPageComponent,
+        data: { title: 'Error' },
+      },
     ],
   },
   {
@@ -255,4 +266,5 @@ export const routingComponents = [
   BlogsComponent,
   TeamMembersComponent,
   ContactComponent,
+  ErrorPageComponent,
 ];
