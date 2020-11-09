@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.6.0...v1.7.0) (2020-11-09)
+
+
+### Features
+
+* added active-deactive to blog list page ([19c9c28](https://github.com/ismetkizgin/JSE-WebSite/commit/19c9c2837be8b0dfa4783803c58870f16edb5dee))
+* added error component ([daba678](https://github.com/ismetkizgin/JSE-WebSite/commit/daba678025925fd8c2dae3f238658e10ab6add08))
+* added error page ([2272dc8](https://github.com/ismetkizgin/JSE-WebSite/commit/2272dc84ed05a5bd183db344423803b14378caaa))
+* added footer edit form page ([826737f](https://github.com/ismetkizgin/JSE-WebSite/commit/826737f601c45eda1c7d82a97f69678ddfcc3abf))
+* added message detail window ([59d6689](https://github.com/ismetkizgin/JSE-WebSite/commit/59d66893d525e24946c9bbf180ced969b0cd9cf2))
+* added pagination for blog page ([af7577e](https://github.com/ismetkizgin/JSE-WebSite/commit/af7577eea06da66421d4ef2d3e5d3b999fee8bf3))
+* added setting service ([634a78d](https://github.com/ismetkizgin/JSE-WebSite/commit/634a78dd835b5afefb17304aa4dfbe514ea63a16))
+* footer information associated with service ([ccf5281](https://github.com/ismetkizgin/JSE-WebSite/commit/ccf52816ad32bdf2aecf996d6723c6eddcc0bfc7))
+* language pack revised ([89434d0](https://github.com/ismetkizgin/JSE-WebSite/commit/89434d04500989fc716afb66abc87b11f6479ff4))
+
 ## [1.6.0](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.5.0...v1.6.0) (2020-11-08)
 
 
