@@ -9,3 +9,4 @@ export * from './add-slider/add-slider.component';
 export * from './blog-card/blog-card.component'
 export * from './user-detail/user-detail.component';
 export * from './message-detail/message-detail.component';
+export * from './error/error.component';
