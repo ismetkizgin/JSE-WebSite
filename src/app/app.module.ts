@@ -8,7 +8,15 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AdminLayoutModule } from './pages/admin/admin-layout.module';
-import { ClientLayoutModule } from './pages/client/client-layout.module';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import {
+  ClientLayoutComponent,
+  ClientNavbarComponent,
+  ClientBannerComponent,
+  SliderComponent,
+  ClientFooterComponent,
+  BlogCardComponent,
+} from './components/';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -17,15 +25,22 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents, 
+    ClientLayoutComponent,
+    ClientNavbarComponent,
+    ClientBannerComponent,
+    SliderComponent,
+    ClientFooterComponent,
+    BlogCardComponent,
+    routingComponents,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ClientLayoutModule,
     AdminLayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule,
     MatSnackBarModule,
     TranslateModule.forRoot({
       loader: {
@@ -36,7 +51,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

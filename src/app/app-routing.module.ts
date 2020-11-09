@@ -25,7 +25,7 @@ import {
   ContactComponent,
   BlogListComponent,
   MessageListComponent,
-  FooterEditComponent
+  FooterEditComponent,
 } from './pages';
 import { AuthGuard } from './utils/guards';
 
@@ -185,8 +185,7 @@ const routes: Routes = [
           icon: 'fa fa-2x fa-cogs',
           authorize: [Roles.Root, Roles.Administrator],
         },
-        
-      }
+      },
     ],
   },
   {
@@ -249,4 +248,11 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-export const routingComponents = [];
+export const routingComponents = [
+  HomepageComponent,
+  ProjectsComponent,
+  BlogDetailComponent,
+  BlogsComponent,
+  TeamMembersComponent,
+  ContactComponent,
+];

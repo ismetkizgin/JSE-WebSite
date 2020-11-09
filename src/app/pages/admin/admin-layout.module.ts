@@ -43,7 +43,7 @@ import {
   BlogAddComponent,
   BlogListComponent,
   MessageListComponent,
-  FooterEditComponent
+  FooterEditComponent,
 } from './';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -100,6 +100,16 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+  ],
+  exports: [
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    NgSearchFilterModule,
+    NgxPaginationModule
   ],
   providers: [],
 })
