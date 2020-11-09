@@ -12,6 +12,5 @@ export class ClientFooterComponent implements OnInit {
   setting: Setting = new Setting();
   async ngOnInit() {
     this.setting = <Setting>await this._settingService.getAsync();
-    console.log(this.setting)
   }
 }
