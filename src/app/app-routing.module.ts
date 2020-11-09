@@ -83,7 +83,7 @@ const routes: Routes = [
         path: 'blog-menus',
         component: BlogMenuListComponent,
         data: {
-          title: 'User Add',
+          title: 'Blog Menu List',
           icon: 'fa fa-2x fa-caret-square-down',
           authorize: [Roles.Root, Roles.Administrator],
         },
@@ -92,7 +92,7 @@ const routes: Routes = [
         path: 'slides',
         component: SlideListComponent,
         data: {
-          title: 'User Add',
+          title: 'Slide List',
           icon: 'fa fa-2x fa-sliders-h',
         },
       },
@@ -140,7 +140,7 @@ const routes: Routes = [
         path: 'projects',
         component: ProjectListComponent,
         data: {
-          title: 'Project Add',
+          title: 'Project List',
           icon: 'fa fa-2x fa-hive',
         },
       },
@@ -173,7 +173,7 @@ const routes: Routes = [
         component: MessageListComponent,
         data: {
           title: 'Message List',
-          icon: 'fa fa-2x fa-user',
+          icon: 'fa fa-2x fa-inbox',
           authorize: [Roles.Root, Roles.Administrator],
         },
       },
@@ -181,8 +181,8 @@ const routes: Routes = [
         path: 'footer/edit',
         component: FooterEditComponent,
         data: {
-          title: 'Footer Edit',
-          icon: 'fa fa-2x fa-user',
+          title: 'Site Setting',
+          icon: 'fa fa-2x fa-cogs',
           authorize: [Roles.Root, Roles.Administrator],
         },
         
