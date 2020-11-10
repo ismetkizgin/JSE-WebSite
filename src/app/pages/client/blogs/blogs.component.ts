@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../../../models';
 import { BlogService } from '../../../utils';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs',
@@ -11,8 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogsComponent implements OnInit {
   constructor(
     private _blogService: BlogService,
-    private _activatedRoute: ActivatedRoute
-  ) {}
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {
+    this._router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.ngOnInit();
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 
   searchText: String;
   paginationConfig = {

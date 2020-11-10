@@ -17,7 +17,8 @@
                 <a class="nav-link" [routerLink]="[ '/projects']">{{ 'Project' | translate }}</a>
             </li>
             <li class="nav-item" *ngFor="let blogMenu of blogMenus">
-                <a class="nav-link" href="{{ blogMenu.BlogMenuName }}/{{ blogMenu.BlogMenuID }}">{{ blogMenu.BlogMenuName | translate }}</a>
+                <a class="nav-link"
+                    [routerLink]="[ '/', blogMenu.BlogMenuName, blogMenu.BlogMenuID]">{{ blogMenu.BlogMenuName | translate }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="[ '/team-members']">{{ 'Team' | translate }}</a>
