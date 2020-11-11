@@ -32,6 +32,11 @@ import { AuthGuard } from './utils/guards';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login' },
+  },
+  {
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [AuthGuard],
@@ -246,11 +251,6 @@ const routes: Routes = [
         data: { title: 'Error' },
       },
     ],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: { title: 'Login' },
   },
 ];
 
