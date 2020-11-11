@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   example:
-    container_name: AdminLTE-Starting-Kit-Angularjs
+    container_name: jse-website
     build:
       context: .
       dockerfile: ./docker/Dockerfile
