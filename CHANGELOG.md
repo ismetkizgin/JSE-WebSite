@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.1...v1.7.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* fix for error page redirect problem ([0b2a92e](https://github.com/ismetkizgin/JSE-WebSite/commit/0b2a92ea53e75106244eeb82cbd5f8005e40e74c))
+* query was edited for active blog list only ([050127d](https://github.com/ismetkizgin/JSE-WebSite/commit/050127d60e7e666fd091d1fe78b2e8553217e69d))
+
 ### [1.7.1](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.0...v1.7.1) (2020-11-10)
 
 
