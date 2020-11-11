@@ -36,7 +36,7 @@ export class BlogsComponent implements OnInit {
         'BlogMenuID'
       );
       this.blogs = <Array<Blog>>(
-        await this._blogService.listAsync({ BlogMenuID })
+        await this._blogService.listAsync({ BlogMenuID, BlogState: true })
       );
     } catch (error) {
       this._blogService.errorNotification(error);
