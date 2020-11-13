@@ -228,7 +228,7 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
         data: {
-          title: 'Cantact',
+          title: 'Contact',
         },
       },
       {
