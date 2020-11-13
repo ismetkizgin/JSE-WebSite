@@ -48,7 +48,7 @@ footer {
   border-radius: 5px;
   font-size: 14px;
 }
-.tweet-box:before {
+.tweet-box-top {
   background-color: #505b71;
   border-color: #505b71;
   border-image: none;
@@ -67,6 +67,7 @@ footer {
   font-size: 40px;
   float: left;
   margin-right: 15px;
+  color:#007bb6;
 }
 .social-link-footer {
   display: flex;
