@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.3](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.2...v1.7.3) (2020-11-13)
+
+
+### Bug Fixes
+
+* fix for team member pages ([fdea208](https://github.com/ismetkizgin/JSE-WebSite/commit/fdea208129e0b5a7f39e4b83b492c9654c5d0a59))
+* fix profile button router link ([a94063c](https://github.com/ismetkizgin/JSE-WebSite/commit/a94063c4e8b0603c6d8b825286349cf6c72e37d7))
+
 ### [1.7.2](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.1...v1.7.2) (2020-11-11)
 
 
