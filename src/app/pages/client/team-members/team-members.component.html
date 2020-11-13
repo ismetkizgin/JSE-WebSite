@@ -10,12 +10,12 @@
                     <img class="img-circle elevation-2" src="{{ teamMember.TeamMemberImagePath }}" alt="User Avatar">
                 </div>
                 <div class="card-body mt-3">
-                    <div class="row pt-3">
-                        <div class="col-12">
+                    <div class="row pt-4">
+                        <div class="col-12 pt-2" *ngIf="teamMember.TeamMemberCompany">
                             <p class="text-center"> {{ teamMember.TeamMemberCompany }} </p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" *ngIf="teamMember.TeamMemberDescription">
                         <div class="col-12">
                             <p class="text-center"> {{ teamMember.TeamMemberDescription }} </p>
                         </div>
@@ -23,18 +23,18 @@
                 </div>
                 <div class="card-footer p-1">
                     <div class="row">
-                        <div class="col-6 border-right">
+                        <div class="col-6 border-right" *ngIf="teamMember.TeamMemberLinkedin">
                             <div class="description-block">
                                 <div>
-                                    <a href="{{ teamMember.TeamMemberLinkedin }}"><i
+                                    <a href="{{ teamMember.TeamMemberLinkedin }}" target="_blank"><i
                                             class="fab fa-linkedin fa-3x"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6" *ngIf="teamMember.TeamMemberGithub">
                             <div class="description-block">
                                 <div>
-                                    <a href="{{ teamMember.TeamMemberGithub }}"><i
+                                    <a href="{{ teamMember.TeamMemberGithub }}" target="_blank"><i
                                             class="fab fa-github fa-3x text-dark"></i></a>
                                 </div>
                             </div>

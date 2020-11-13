@@ -44,7 +44,6 @@
                   name="TeamMemberCompany"
                   #TeamMemberCompany="ngModel"
                   [(ngModel)]="_model.TeamMemberCompany"
-                  required
                 />
                 <mat-error
                   *ngIf="TeamMemberCompany.invalid && TeamMemberCompany.touched"
@@ -117,7 +116,6 @@
                   name="TeamMemberGithub"
                   #TeamMemberGithub="ngModel"
                   [(ngModel)]="_model.TeamMemberGithub"
-                  required
                 />
                 <mat-error
                   *ngIf="TeamMemberGithub.invalid && TeamMemberGithub.touched"
@@ -140,7 +138,6 @@
                   name="TeamMemberLinkedin"
                   #TeamMemberLinkedin="ngModel"
                   [(ngModel)]="_model.TeamMemberLinkedin"
-                  required
                 />
                 <mat-error
                   *ngIf="
@@ -167,7 +164,6 @@
                   name="TeamMemberDescription"
                   #TeamMemberDescription="ngModel"
                   [(ngModel)]="_model.TeamMemberDescription"
-                  required
                 ></textarea>
                 <mat-error
                   *ngIf="
