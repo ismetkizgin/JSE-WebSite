@@ -103,11 +103,21 @@ const routes: Routes = [
         },
       },
       {
+        path: 'projects',
+        component: ProjectListComponent,
+        data: {
+          title: 'Project List',
+          icon: 'fa fa-2x fa-hive',
+          authorize: [Roles.Root, Roles.Administrator],
+        },
+      },
+      {
         path: 'project/add',
         component: ProjectAddComponent,
         data: {
           title: 'Project Add',
           icon: 'fa fa-2x fa-globe',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
@@ -116,6 +126,7 @@ const routes: Routes = [
         data: {
           title: 'Project Update',
           icon: 'fa fa-2x fa-pen-square',
+          authorize: [Roles.Root, Roles.Administrator],
         },
       },
       {
@@ -140,14 +151,6 @@ const routes: Routes = [
         data: {
           title: 'Blog List',
           icon: 'fa fa-2x fa-list',
-        },
-      },
-      {
-        path: 'projects',
-        component: ProjectListComponent,
-        data: {
-          title: 'Project List',
-          icon: 'fa fa-2x fa-hive',
         },
       },
       {

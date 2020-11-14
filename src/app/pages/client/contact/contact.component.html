@@ -51,7 +51,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>{{ 'Message' | translate }}</mat-label>
                 <textarea matInput placeholder="{{ 'Type your message here' | translate }}"
-                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="Message" #Message="ngModel" [(ngModel)]="_model.Message"
+                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı.,-!?* ]+$" name="Message" #Message="ngModel" [(ngModel)]="_model.Message"
                     required></textarea>
                 <mat-error *ngIf="Message.invalid&&Message.touched">
                     {{ 'Message field must be filled' | translate }}</mat-error>
