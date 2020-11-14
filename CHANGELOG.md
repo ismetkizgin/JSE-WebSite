@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.4](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.3...v1.7.4) (2020-11-14)
+
+
+### Bug Fixes
+
+* fix for blog menu form window opening error ([1617eb7](https://github.com/ismetkizgin/JSE-WebSite/commit/1617eb7132499034c25426e903d03e152284e509))
+* fix user project list ([a4dfcc4](https://github.com/ismetkizgin/JSE-WebSite/commit/a4dfcc46bcc9e573aa27742af88702561379b67e))
+
 ### [1.7.3](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.2...v1.7.3) (2020-11-13)
 
 
