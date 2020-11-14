@@ -39,11 +39,14 @@ export class BlogMenuListComponent implements OnInit {
   }
 
   openBlogMenuModal(BlogMenuID = null) {
+    let data = null;
+    if (BlogMenuID)
+      data = this.blogMenus.find(
+        (blogMenu) => blogMenu.BlogMenuID == BlogMenuID
+      );
     const diologRef = this._dialog.open(AddBlogMenuComponent, {
       width: '500px',
-      data: this.blogMenus.find(
-        (blogMenu) => blogMenu.BlogMenuID == BlogMenuID
-      ),
+      data,
     });
     diologRef.afterClosed().subscribe((result: any) => {
       if (result) this.ngOnInit();
