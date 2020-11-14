@@ -14,7 +14,9 @@ export class BlogCardComponent implements OnInit {
   @Input() limit: number = 6;
   async ngOnInit() {
     try {
-      this.blogs = <Array<Blog>>await this._blogService.listAsync({ limit: 6 });
+      this.blogs = <Array<Blog>>(
+        await this._blogService.listAsync({ limit: 6, BlogState: true })
+      );
     } catch (error) {
       this._blogService.errorNotification(error);
     }
