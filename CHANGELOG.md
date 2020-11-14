@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.5](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.4...v1.7.5) (2020-11-14)
+
+
+### Bug Fixes
+
+* fix for blog form input pattern validation ([79f0e6b](https://github.com/ismetkizgin/JSE-WebSite/commit/79f0e6bcbe50ff66590c2d1cb96db4927bb13e32))
+* fix project page design bug ([64544fe](https://github.com/ismetkizgin/JSE-WebSite/commit/64544fe4979c051c509c19b38654c62c9f043ea6))
+* fix project pages authorization transactions ([ff5c678](https://github.com/ismetkizgin/JSE-WebSite/commit/ff5c678797d1325d1578db58e46f4cc42ffa352d))
+
 ### [1.7.4](https://github.com/ismetkizgin/JSE-WebSite/compare/v1.7.3...v1.7.4) (2020-11-14)
 
 
