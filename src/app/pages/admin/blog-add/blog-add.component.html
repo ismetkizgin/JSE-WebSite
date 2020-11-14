@@ -24,7 +24,7 @@
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Blog Title' | translate }}</mat-label>
                                 <input matInput type="text" placeholder="{{ 'Enter Blog Title' | translate }}"
-                                    pattern="^[A-Za-zÇçÖöŞşÜüĞğİı ]+$" name="BlogTitle" #BlogTitle="ngModel"
+                                    name="BlogTitle" #BlogTitle="ngModel" maxlength="150"
                                     [(ngModel)]="_model.BlogTitle" required>
                                 <mat-error *ngIf="BlogTitle.invalid&&BlogTitle.touched">
                                     {{ 'Blog Title field must be filled' | translate }}</mat-error>
@@ -36,7 +36,7 @@
                             <mat-form-field appearance="outline">
                                 <mat-label>{{ 'Blog Description' | translate }}</mat-label>
                                 <textarea matInput type="text" placeholder="{{ 'Enter Blog Description' | translate }}"
-                                    name="BlogDescription" #BlogDescription="ngModel"
+                                    name="BlogDescription" #BlogDescription="ngModel" maxlength="200"
                                     [(ngModel)]="_model.BlogDescription" required></textarea>
                                 <mat-error *ngIf="BlogDescription.invalid&&BlogDescription.touched">
                                     {{ 'Blog Description field must be filled' | translate }}</mat-error>
