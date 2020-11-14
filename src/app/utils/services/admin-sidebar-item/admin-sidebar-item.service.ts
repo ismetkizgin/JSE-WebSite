@@ -79,6 +79,7 @@ export class AdminSidebarItemService {
           link: '/admin/project/add',
         },
       ],
+      authorize: [Roles.Root, Roles.Administrator]
     },
     {
       title: 'Team Transactions',
